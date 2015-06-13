@@ -29,7 +29,7 @@ gem 'rails_12factor', group: :production
 
 #Gema para generar pdfs en Heroku
 gem 'wicked_pdf'
-#gem 'wkhtmltopdf-heroku'
+gem 'wkhtmltopdf-binary'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
