@@ -1,0 +1,35 @@
+Para usar postgres:
+	Modificar config/database.yml:
+									default: &default
+									  adapter: postgresql
+									  encoding: unicode
+									  pool: 5
+
+									development:
+
+									  adapter: postgresql
+									  encoding: unicode
+									  database: seguro_facil_version2
+									  pool: 5
+									  username:
+									  password:
+
+									test:
+									  adapter: postgresql
+									  encoding: unicode
+									  database: seguro_facil_version2
+									  pool: 5
+									  username:
+									  password:
+
+
+									production:
+
+									  adapter: postgresql
+									  encoding: unicode
+									  database: seguro_facil_version2
+									  pool: 5
+									  username:
+									  password:
+	Ejecutar rake db:crete
+	Ejecutar rake db:migrate

@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @informacion_producto.nombre %>
+</p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @informacion_producto.tipo %>
+</p>
+
+<p>
+  <strong>Prima:</strong>
+  <%= @informacion_producto.prima %>
+</p>
+
+<p>
+  <strong>Valor asegurado:</strong>
+  <%= @informacion_producto.valor_asegurado %>
+</p>
+
+<p>
+  <strong>Duracion meses:</strong>
+  <%= @informacion_producto.duracion_meses %>
+</p>
+
+<p>
+  <strong>Aseguradora responsable:</strong>
+  <%= @informacion_producto.aseguradora_responsable_id %>
+</p>
+
+<p>
+  <strong>Aux1:</strong>
+  <%= @informacion_producto.aux1 %>
+</p>
+
+<p>
+  <strong>Aux2:</strong>
+  <%= @informacion_producto.aux2 %>
+</p>
+
+<p>
+  <strong>Aux3:</strong>
+  <%= @informacion_producto.aux3 %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @informacion_producto.image %>
+</p>
+
+<%= link_to 'Edit', edit_informacion_producto_path(@informacion_producto) %> |
+<%= link_to 'Back', informacion_productos_path %>

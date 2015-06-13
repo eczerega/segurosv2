@@ -1,0 +1,61 @@
+<%= form_for(@puntos_ventum) do |f| %>
+  <% if @puntos_ventum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@puntos_ventum.errors.count, "error") %> prohibited this puntos_ventum from being saved:</h2>
+
+      <ul>
+      <% @puntos_ventum.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre %><br>
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :ciudad %><br>
+    <%= f.text_field :ciudad %>
+  </div>
+  <div class="field">
+    <%= f.label :comuna %><br>
+    <%= f.text_field :comuna %>
+  </div>
+  <div class="field">
+    <%= f.label :rut %><br>
+    <%= f.text_field :rut %>
+  </div>
+  <div class="field">
+    <%= f.label :dv %><br>
+    <%= f.number_field :dv %>
+  </div>
+  <div class="field">
+    <%= f.label :calle %><br>
+    <%= f.text_field :calle %>
+  </div>
+  <div class="field">
+    <%= f.label :empresa_id %><br>
+    <%= f.number_field :empresa_id %>
+  </div>
+  <div class="field">
+    <%= f.label :aux1 %><br>
+    <%= f.text_field :aux1 %>
+  </div>
+  <div class="field">
+    <%= f.label :aux2 %><br>
+    <%= f.text_field :aux2 %>
+  </div>
+  <div class="field">
+    <%= f.label :aux3 %><br>
+    <%= f.text_field :aux3 %>
+  </div>
+  <div class="field">
+    <%= f.label :image %><br>
+    <%= f.text_field :image %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

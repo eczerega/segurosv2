@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Producto Tecnologia</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Producto</th>
+      <th>Tipo producto</th>
+      <th>Marca</th>
+      <th>Anho</th>
+      <th>Fecha inicio</th>
+      <th>Fecha termino</th>
+      <th>Nombre comprador</th>
+      <th>Apellido comprador</th>
+      <th>Rut comprador</th>
+      <th>Digito verifiador comprador</th>
+      <th>Email comprador</th>
+      <th>Numero comprador</th>
+      <th>Nombre asegurado</th>
+      <th>Apellido asegurado</th>
+      <th>Rut asegurado</th>
+      <th>Digito verificador asegurado</th>
+      <th>Email asegurado</th>
+      <th>Numero asegurado</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @producto_tecnologia.each do |producto_tecnologium| %>
+      <tr>
+        <td><%= producto_tecnologium.producto %></td>
+        <td><%= producto_tecnologium.tipo_producto %></td>
+        <td><%= producto_tecnologium.marca %></td>
+        <td><%= producto_tecnologium.anho %></td>
+        <td><%= producto_tecnologium.fecha_inicio %></td>
+        <td><%= producto_tecnologium.fecha_termino %></td>
+        <td><%= producto_tecnologium.nombre_comprador %></td>
+        <td><%= producto_tecnologium.apellido_comprador %></td>
+        <td><%= producto_tecnologium.rut_comprador %></td>
+        <td><%= producto_tecnologium.digito_verifiador_comprador %></td>
+        <td><%= producto_tecnologium.email_comprador %></td>
+        <td><%= producto_tecnologium.numero_comprador %></td>
+        <td><%= producto_tecnologium.nombre_asegurado %></td>
+        <td><%= producto_tecnologium.apellido_asegurado %></td>
+        <td><%= producto_tecnologium.rut_asegurado %></td>
+        <td><%= producto_tecnologium.digito_verificador_asegurado %></td>
+        <td><%= producto_tecnologium.email_asegurado %></td>
+        <td><%= producto_tecnologium.numero_asegurado %></td>
+        <td><%= link_to 'Show', producto_tecnologium %></td>
+        <td><%= link_to 'Edit', edit_producto_tecnologium_path(producto_tecnologium) %></td>
+        <td><%= link_to 'Destroy', producto_tecnologium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Producto tecnologium', new_producto_tecnologium_path %>

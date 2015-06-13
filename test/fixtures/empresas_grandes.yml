@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  representante_legal_rut: MyString
+  dv: 1
+  aux1: MyString
+  aux2: MyString
+  aux3: MyString
+  image: MyString
+
+two:
+  nombre: MyString
+  representante_legal_rut: MyString
+  dv: 1
+  aux1: MyString
+  aux2: MyString
+  aux3: MyString
+  image: MyString

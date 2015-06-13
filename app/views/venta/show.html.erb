@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tipo producto:</strong>
+  <%= @ventum.tipo_producto %>
+</p>
+
+<p>
+  <strong>Monto:</strong>
+  <%= @ventum.monto %>
+</p>
+
+<p>
+  <strong>Vendedor:</strong>
+  <%= @ventum.vendedor_id %>
+</p>
+
+<p>
+  <strong>Punto de venta:</strong>
+  <%= @ventum.punto_de_venta_id %>
+</p>
+
+<p>
+  <strong>Aux1:</strong>
+  <%= @ventum.aux1 %>
+</p>
+
+<p>
+  <strong>Aux2:</strong>
+  <%= @ventum.aux2 %>
+</p>
+
+<p>
+  <strong>Aux3:</strong>
+  <%= @ventum.aux3 %>
+</p>
+
+<%= link_to 'Edit', edit_ventum_path(@ventum) %> |
+<%= link_to 'Back', venta_path %>

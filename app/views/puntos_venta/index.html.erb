@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Puntos Venta</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Ciudad</th>
+      <th>Comuna</th>
+      <th>Rut</th>
+      <th>Dv</th>
+      <th>Calle</th>
+      <th>Empresa</th>
+      <th>Aux1</th>
+      <th>Aux2</th>
+      <th>Aux3</th>
+      <th>Image</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @puntos_venta.each do |puntos_ventum| %>
+      <tr>
+        <td><%= puntos_ventum.nombre %></td>
+        <td><%= puntos_ventum.ciudad %></td>
+        <td><%= puntos_ventum.comuna %></td>
+        <td><%= puntos_ventum.rut %></td>
+        <td><%= puntos_ventum.dv %></td>
+        <td><%= puntos_ventum.calle %></td>
+        <td><%= puntos_ventum.empresa_id %></td>
+        <td><%= puntos_ventum.aux1 %></td>
+        <td><%= puntos_ventum.aux2 %></td>
+        <td><%= puntos_ventum.aux3 %></td>
+        <td><%= puntos_ventum.image %></td>
+        <td><%= link_to 'Show', puntos_ventum %></td>
+        <td><%= link_to 'Edit', edit_puntos_ventum_path(puntos_ventum) %></td>
+        <td><%= link_to 'Destroy', puntos_ventum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Puntos ventum', new_puntos_ventum_path %>

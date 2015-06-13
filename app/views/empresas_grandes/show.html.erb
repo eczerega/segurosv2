@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @empresas_grande.nombre %>
+</p>
+
+<p>
+  <strong>Representante legal rut:</strong>
+  <%= @empresas_grande.representante_legal_rut %>
+</p>
+
+<p>
+  <strong>Dv:</strong>
+  <%= @empresas_grande.dv %>
+</p>
+
+<p>
+  <strong>Aux1:</strong>
+  <%= @empresas_grande.aux1 %>
+</p>
+
+<p>
+  <strong>Aux2:</strong>
+  <%= @empresas_grande.aux2 %>
+</p>
+
+<p>
+  <strong>Aux3:</strong>
+  <%= @empresas_grande.aux3 %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @empresas_grande.image %>
+</p>
+
+<%= link_to 'Edit', edit_empresas_grande_path(@empresas_grande) %> |
+<%= link_to 'Back', empresas_grandes_path %>

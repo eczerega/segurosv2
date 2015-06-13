@@ -1,0 +1,57 @@
+<%= form_for(@informacion_producto) do |f| %>
+  <% if @informacion_producto.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@informacion_producto.errors.count, "error") %> prohibited this informacion_producto from being saved:</h2>
+
+      <ul>
+      <% @informacion_producto.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre %><br>
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :tipo %><br>
+    <%= f.text_field :tipo %>
+  </div>
+  <div class="field">
+    <%= f.label :prima %><br>
+    <%= f.number_field :prima %>
+  </div>
+  <div class="field">
+    <%= f.label :valor_asegurado %><br>
+    <%= f.number_field :valor_asegurado %>
+  </div>
+  <div class="field">
+    <%= f.label :duracion_meses %><br>
+    <%= f.number_field :duracion_meses %>
+  </div>
+  <div class="field">
+    <%= f.label :aseguradora_responsable_id %><br>
+    <%= f.number_field :aseguradora_responsable_id %>
+  </div>
+  <div class="field">
+    <%= f.label :aux1 %><br>
+    <%= f.text_field :aux1 %>
+  </div>
+  <div class="field">
+    <%= f.label :aux2 %><br>
+    <%= f.text_field :aux2 %>
+  </div>
+  <div class="field">
+    <%= f.label :aux3 %><br>
+    <%= f.text_field :aux3 %>
+  </div>
+  <div class="field">
+    <%= f.label :image %><br>
+    <%= f.text_field :image %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

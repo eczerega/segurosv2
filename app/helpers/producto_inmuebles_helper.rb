@@ -1,0 +1,2 @@
+module ProductoInmueblesHelper
+end

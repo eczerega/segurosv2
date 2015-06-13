@@ -1,0 +1,97 @@
+<%= form_for(@producto_vehiculo) do |f| %>
+  <% if @producto_vehiculo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@producto_vehiculo.errors.count, "error") %> prohibited this producto_vehiculo from being saved:</h2>
+
+      <ul>
+      <% @producto_vehiculo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :producto %><br>
+    <%= f.text_field :producto %>
+  </div>
+  <div class="field">
+    <%= f.label :marca %><br>
+    <%= f.text_field :marca %>
+  </div>
+  <div class="field">
+    <%= f.label :modelos %><br>
+    <%= f.text_field :modelos %>
+  </div>
+  <div class="field">
+    <%= f.label :anho %><br>
+    <%= f.number_field :anho %>
+  </div>
+  <div class="field">
+    <%= f.label :motor %><br>
+    <%= f.text_field :motor %>
+  </div>
+  <div class="field">
+    <%= f.label :patente %><br>
+    <%= f.text_field :patente %>
+  </div>
+  <div class="field">
+    <%= f.label :fecha_inicio %><br>
+    <%= f.date_select :fecha_inicio %>
+  </div>
+  <div class="field">
+    <%= f.label :fecha_termino %><br>
+    <%= f.date_select :fecha_termino %>
+  </div>
+  <div class="field">
+    <%= f.label :nombre_comprador %><br>
+    <%= f.text_field :nombre_comprador %>
+  </div>
+  <div class="field">
+    <%= f.label :apellido_comprador %><br>
+    <%= f.text_field :apellido_comprador %>
+  </div>
+  <div class="field">
+    <%= f.label :rut_comprador %><br>
+    <%= f.text_field :rut_comprador %>
+  </div>
+  <div class="field">
+    <%= f.label :digito_verifiador_comprador %><br>
+    <%= f.number_field :digito_verifiador_comprador %>
+  </div>
+  <div class="field">
+    <%= f.label :email_comprador %><br>
+    <%= f.text_field :email_comprador %>
+  </div>
+  <div class="field">
+    <%= f.label :numero_comprador %><br>
+    <%= f.text_field :numero_comprador %>
+  </div>
+  <div class="field">
+    <%= f.label :nombre_asegurado %><br>
+    <%= f.text_field :nombre_asegurado %>
+  </div>
+  <div class="field">
+    <%= f.label :apellido_asegurado %><br>
+    <%= f.text_field :apellido_asegurado %>
+  </div>
+  <div class="field">
+    <%= f.label :rut_asegurado %><br>
+    <%= f.text_field :rut_asegurado %>
+  </div>
+  <div class="field">
+    <%= f.label :digito_verificador_asegurado %><br>
+    <%= f.number_field :digito_verificador_asegurado %>
+  </div>
+  <div class="field">
+    <%= f.label :email_asegurado %><br>
+    <%= f.text_field :email_asegurado %>
+  </div>
+  <div class="field">
+    <%= f.label :numero_asegurado %><br>
+    <%= f.text_field :numero_asegurado %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

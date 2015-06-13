@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tipo_producto: MyString
+  monto: 1
+  vendedor_id: 1
+  punto_de_venta_id: 1
+  aux1: MyString
+  aux2: MyString
+  aux3: MyString
+
+two:
+  tipo_producto: MyString
+  monto: 1
+  vendedor_id: 1
+  punto_de_venta_id: 1
+  aux1: MyString
+  aux2: MyString
+  aux3: MyString
