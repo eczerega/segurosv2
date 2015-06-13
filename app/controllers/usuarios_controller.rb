@@ -28,6 +28,14 @@ class UsuariosController < ApplicationController
 
     respond_to do |format|
       if @usuario.save
+
+        @pdf=WickedPdf.new.pdf_from_string('test')
+
+        save_path = Rails.root.join('pdfs',@usuario.id.to_s+'.pdf')
+        File.open(save_path, 'wb') do |file|
+          file << @pdf
+        end
+
         format.html { redirect_to @usuario, notice: 'Usuario was successfully created.' }
         format.json { render :show, status: :created, location: @usuario }
       else
