@@ -21,6 +21,10 @@ class UsuariosController < ApplicationController
   def edit
   end
 
+  def download
+    send_file 'pdfs/'+params[:userid]+'.pdf', :type=>'application/pdfs', :x_sendfile=>true
+  end
+
   # POST /usuarios
   # POST /usuarios.json
   def create

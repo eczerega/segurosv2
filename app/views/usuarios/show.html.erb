@@ -62,3 +62,5 @@
 
 <%= link_to 'Edit', edit_usuario_path(@usuario) %> |
 <%= link_to 'Back', usuarios_path %>
+<%= link_to 'Descargar PDF de bienvenida', :controller => 'usuarios', :action => 'download', :userid => @usuario.id.to_s %>
+
