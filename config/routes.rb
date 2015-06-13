@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
   resources :usuarios
 
-  resources :users do
+  resources :usuarios do
     member do
       get :download
     end
