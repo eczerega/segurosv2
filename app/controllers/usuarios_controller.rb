@@ -39,7 +39,7 @@ class UsuariosController < ApplicationController
         File.open(save_path, 'wb') do |file|
           file << @pdf
         end
-
+        ActionMail.bienvenido_email(@usuario, 'Bienvenido '+@usuario.nombre+' a seguro fácil', "Creaste la cuenta salame ").deliver
         format.html { redirect_to @usuario, notice: 'Usuario was successfully created.' }
         format.json { render :show, status: :created, location: @usuario }
       else
