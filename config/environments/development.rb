@@ -13,10 +13,11 @@ Rails.application.configure do
       address: 'smtp.gmail.com',
       port: 587,
       domain: 'gmail.com',
-      user_name: 'b4appweb@gmail.com',
-      password: 'Aplicacionesweb',
+      user_name: 'poliza.segurofacil@gmail.com',
+      password: 'segurofacil123',
       authentication: 'plain',
-      enable_starttls_auto: true }
+      enable_starttls_auto: true
+  }
 
   # Show full error reports and disable caching.
 
