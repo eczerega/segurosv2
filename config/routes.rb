@@ -19,11 +19,15 @@ Rails.application.routes.draw do
 
   resources :usuarios
 
+  #Ruta para descargar pdfs
   resources :usuarios do
     member do
       get :download
     end
   end
+
+  #Ruta pa Twilio
+  post 'twilio/voice' => 'twilio#voice'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
