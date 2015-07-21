@@ -42,7 +42,16 @@
 
 <p>
   <strong>Image:</strong>
-  <%= @usuario.image %>
+  <% if @usuario.image.to_s.empty? %>
+
+      NO IMAGEN
+
+  <% else %>
+
+
+      <%= image_tag @usuario.image_url.to_s, :size => '570x500' %>
+
+  <% end %>
 </p>
 
 <p>

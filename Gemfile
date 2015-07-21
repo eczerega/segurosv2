@@ -30,7 +30,6 @@ gem 'rails_12factor', group: :production
 gem 'bootstrap-sass'
 gem 'high_voltage'
 gem 'autoprefixer-rails'
-
 #######
 
 #Gema para fuentes
@@ -43,6 +42,17 @@ gem 'wkhtmltopdf-binary'
 
 #Gema para manejar mensajes
 gem 'twilio-ruby'
+###
+
+#Gema para ver mejor  errores
+gem 'better_errors'
+##
+
+
+#Gema para subir archivos
+gem 'carrierwave'
+###
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
