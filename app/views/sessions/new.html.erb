@@ -1,26 +1,90 @@
-<div class="container">
-  <div class="jumbotron">
-    <h1>My First Bootstrap Page</h1>
-    <p>Resize this responsive page to see the effect!</p>
-  </div>
-  <div class="row">
-    <div class="col-sm-4">
-      <h3>Column 1</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-    </div>
-    <div class="col-sm-4">
-      <h3>Column 2</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-    </div>
-    <div class="col-sm-4">
-      <h3>Column 3</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+
+<head>
+
+  <style>
+
+      body
+      {
+          background-repeat: repeat;
+          background-attachment: fixed;"
+      }
+
+      form {
+          max-width: 100%;
+          margin: 10px auto;
+          padding: 10px 20px;
+          background: lavender;
+          border: 10px;
+          border: 1px solid #5b5758;
+          border-width: 1px 1px 3px;
+
+      }
+
+
+      #signup .inputs input[type=email],input[type=text],input[type=number], input[type=password] {
+
+          width: 80%;
+      }
+  </style>
+
+</head>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+
+<div class="center" >
+  <div class="center" >
+    <div class="center" >
+      <div>
+
+      </div>
     </div>
   </div>
 </div>
+
+
+
+<div  style="width: 40%;">
+
+  <br><br>
+
+  <%= $status %></b>
+  <%= $help %></b>
+  <% if current_user? %>
+    Bienvenido <b><%= current_user.nombre %></b>
+  <% else %>
+    No ha iniciado sesión
+  <% end %>
+  <div class="login-card">
+
+    <%= form_for(:session, url: session_path) do |f| %>
+        <h2>Iniciar sesión</h2>
+        <h5></h5>
+        <br>
+
+        <span class="glyphicon glyphicon-envelope" style="padding-right: 8px" >  </span>
+      <span class="field">
+      <%= f.text_field :email, value: params[:session].try(:[], :email) %>
+
+    </span>
+
+        <br><br>
+        <span class="glyphicon glyphicon-eye-open " style="padding-right: 8px" > </span>
+
+    <span class="field">
+      <%= f.password_field :password %>
+    </span>
+        <br><br>
+        <div class="actions">
+          <%= f.submit 'Entrar' %>
+        </div>
+    <% end %>
+
+  </div>
+</div>
+
+
+
+
 
 
 

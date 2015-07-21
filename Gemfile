@@ -53,6 +53,10 @@ gem 'better_errors'
 gem 'carrierwave'
 ###
 
+#Gema para pass seguras
+gem 'bcrypt', '~> 3.1.7'
+###
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
