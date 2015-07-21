@@ -26,6 +26,8 @@ Rails.application.routes.draw do
     end
   end
 
+  root 'sessions#new'
+
   #Ruta pa Twilio
   post 'twilio/voice' => 'twilio#voice'
 

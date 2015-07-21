@@ -26,6 +26,16 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 #Gema de heroku
 gem 'rails_12factor', group: :production
 
+#gema bootstrap
+gem 'bootstrap-sass'
+gem 'high_voltage'
+gem 'autoprefixer-rails'
+
+#######
+
+#Gema para fuentes
+gem 'font-awesome-sass'
+####
 
 #Gema para generar pdfs en Heroku
 gem 'wicked_pdf'
