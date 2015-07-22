@@ -21,56 +21,70 @@
 </head>
 <body>
 
-<% if current_user? %>
-    Bienvenido <b><%= current_user.nombre %></b>
-<% else %>
-    No ha iniciado sesión
-<% end %>
 
 
-<div class="container">
-
-  <div class="text-center">
-    <%= image_tag("logo.PNG", :size => '110x8')%></div>
-
-  <div class="jumbotron">
-
-
-    <%= yield %>
-
-
-
-  </div>
-
+<div class="container-fluid">
   <div class="row">
-    <div class="col-sm-4">
-      <h3>Column 1</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    <div class="col-sm-1" ></div>
+    <div class="col-sm-10"
+         style=" background-color: #ffffff; box-shadow: 0px 0px 13px grey;
+         border-radius: 8px;
+         "
+    >
+      <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-2">
+          <br>
+          <%= image_tag("logo.PNG", :size => '120x18')%>
+
+
+        </div>
+        <div class="col-sm-4">
+          <br>
+
+        </div>
+
+        <div class="col-sm-6">
+          <br>
+          <% if current_user? %>
+              <p class="text-right">Bienvenido <b><%= current_user.nombre %></b></p>
+
+          <% else %>
+              <p class="text-right">No ha iniciado sesión</p>
+          <% end %>
+
+            <ul class="nav nav-pills">
+              <li role="presentation"><a href="#">Vender</a></li>
+              <li role="presentation"><a href="#">Historial</a></li>
+              <li role="presentation"><a href="#">Perfil</a></li>
+              <li role="presentation" class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                  Ejemplo  <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </li>
+            </ul>
+
+        </div>
+
+
+      </div>
+      </div>
+
+      <hr width="100%">
+      <%= yield %>
+
     </div>
-
-
-    <div class="col-sm-4">
-      <h3>Column 2</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-    </div>
-
-
-    <div class="col-sm-4">
-      <h3>Column 3</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-    </div>
-
-
+    <div class="col-sm-1" ></div>
   </div>
 </div>
-
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
 
 
 <!-- script references -->

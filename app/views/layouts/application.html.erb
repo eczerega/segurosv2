@@ -5,14 +5,21 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+  <style>
+      body
+      {
+          background: url('<%= image_path('MAINBACK.png').to_s %>') no-repeat center center fixed;
+          -webkit-background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+          background-size: cover;
+      }
+  </style>
 </head>
 <body>
 
-<% if current_user? %>
-    Bienvenido <b><%= current_user.nombre %></b>
-<% else %>
-    No ha iniciado sesión
-<% end %>
+
 
 <%= yield %>
 
