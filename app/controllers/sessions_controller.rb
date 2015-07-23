@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-
+  layout "main"
   $status=0
   $help='asd'
   def new

@@ -2,38 +2,61 @@
 <div class="container-fluid">
 <h1>Vender un producto</h1>
 <p>Selecciona el tipo de producto que quieres vender.</p>
+<style>
 
+    a {
+        background-color: transparent;
+        color: #2c2c2c;
+    }
+    a:hover {
+        background-color: transparent;
+        color: #2c2c2c;
+    }
+    a:visited {
+        background-color: transparent;
+        color: #2c2c2c;
+    }
+</style>
 
   <hr width="100%">
 
   <div class="container-fluid" style=" margin-bottom: 30px;
           box-shadow: 0px 0px 5px grey;
           border-radius: 8px;">
-    <div class="row" style="cursor: pointer;"
-         onmouseover="
-                      this.style.boxShadow='0px 0px 5px blue',
-                      this.style.borderRadius='8px'
-         "
-         onmouseout="
-                      this.style.boxShadow=''
 
-         ">
+    <%= link_to(new_producto_persona_path) do %>
+        <div
+
+        class="row" style="cursor: pointer;"
+        onmouseover="
+        this.style.boxShadow='0px 0px 5px blue',
+                this.style.borderRadius='8px'
+        "
+        onmouseout="
+        this.style.boxShadow=''
+
+        ">
 
           <div class="col-sm-5">
-           <h3>Personas</h3>
+            <h3>Personas</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit asdcrespt tru ansde asperas das...</p>
             <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
           </div>
           <div class="col-sm-7"
                style="
-                       background-image: url('<%= image_path("personas.png").to_s %>');
+               background-image: url('<%= image_path("personas.png").to_s %>');
                        background-repeat: no-repeat;
                        background-position: right;
                        background-size: 430px 240px;"
           >
             <br><br><br><br><br><br><br><br><br><br><br>
           </div>
-    </div>
+        </div>
+    <% end %>
+
+
+
+
 
   </div>
   <div class="container-fluid" style=" margin-bottom: 30px;

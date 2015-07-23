@@ -8,14 +8,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
 
-    body
-    {
-        background: url('<%= image_path('MAINBACK.png').to_s %>') no-repeat center center fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-    }
+      body
+      {
+          background: url('<%= image_path('MAINBACK.png').to_s %>') no-repeat center center fixed;
+          -webkit-background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+          background-size: cover;
+      }
 
   </style>
 </head>
@@ -23,59 +23,10 @@
 
 
 <br>
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-1" ></div>
-    <div class="col-sm-10"
-         style=" background-color: #ffffff; box-shadow: 0px 0px 13px grey;
-         r-radius: 8px;
-         "
-    >
-      <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-2">
-          <br>
-          <%= image_tag("logo.PNG", :size => '120x18')%>
 
-
-        </div>
-        <div class="col-sm-2">
-          <br>
-
-        </div>
-
-        <div class="col-sm-8">
-          <br>
-          <% if current_user? %>
-              <p class="text-right">Bienvenido <b><%= current_user.nombre %></b></p>
-
-          <% else %>
-              <p class="text-right">No ha iniciado sesión</p>
-          <% end %>
-
-              <ul class="nav nav-pills">
-                <li role="presentation"><a href="#"><h4>Vender</h4></a></li>
-                <li role="presentation"><a href="#"><h4>Historial</h4></a></li>
-                <li role="presentation"><a href="#"><h4>Perfil</h4></a></li>
-                <li role="presentation"><a href="#"><h4>Salir</h4></a></li>
-
-              </ul>
-
-
-
-        </div>
-
-
-      </div>
-      </div>
-
-      <hr width="100%">
       <%= yield %>
 
-    </div>
-    <div class="col-sm-1" ></div>
-  </div>
-</div>
+
 <br><br><br>
 
 
