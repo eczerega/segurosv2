@@ -34,6 +34,9 @@ Rails.application.routes.draw do
   #Ruta para el inicio
   get '/inicio' => 'inicio#index', as: 'inicio'
 
+  #Ruta para el perfil
+  get '/perfil' => 'perfil#perfil', as: 'perfil'
+
   #sesiones
   resource :session, only: [:new, :create, :destroy]
 

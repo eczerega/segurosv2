@@ -1,0 +1,79 @@
+<% if current_user? %>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @usuario.nombre %>
+</p>
+
+<p>
+  <strong>Apellido:</strong>
+  <%= @usuario.apellido %>
+</p>
+
+<p>
+  <strong>Rut:</strong>
+  <%= @usuario.rut %>
+</p>
+
+<p>
+  <strong>Dv:</strong>
+  <%= @usuario.dv %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @usuario.email %>
+</p>
+
+<p>
+  <strong>Telefono fijo:</strong>
+  <%= @usuario.telefono_fijo %>
+</p>
+
+<p>
+  <strong>Telefono celular:</strong>
+  <%= @usuario.telefono_celular %>
+</p>
+
+<p>
+  <strong>Password digest:</strong>
+  <%= @usuario.password_digest %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <% if @usuario.image.to_s.empty? %>
+
+      NO IMAGEN
+
+  <% else %>
+
+
+      <%= image_tag @usuario.image_url.to_s, :size => '570x500' %>
+
+  <% end %>
+</p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @usuario.tipo %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @usuario.estado %>
+</p>
+
+<p>
+  <strong>Punto venta:</strong>
+  <%= @usuario.punto_venta %>
+</p>
+
+<%= link_to 'Edit', edit_usuario_path(@usuario) %> |
+<%= link_to 'Back', usuarios_path %>
+
+<% else %>
+    <h1>No ha iniciado sesión </h1>
+<% end %>
