@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
       session[:usuario_id] = u.id
       # flash.notice = "Ingreso exitoso"
       # o usemos la opción de redirect_to, que es equivalente
-      redirect_to root_path, notice: "Ingreso exitoso"
+      redirect_to inicio_path, notice: "Ingreso exitoso"
     else
       $status=3
       flash.now.alert = "Email o contraseña inválidos"
