@@ -2,21 +2,7 @@
 <div class="container-fluid">
 <h1>Vender un producto</h1>
 <p>Selecciona el tipo de producto que quieres vender.</p>
-<style>
 
-    a {
-        background-color: transparent;
-        color: #2c2c2c;
-    }
-    a:hover {
-        background-color: transparent;
-        color: #2c2c2c;
-    }
-    a:visited {
-        background-color: transparent;
-        color: #2c2c2c;
-    }
-</style>
 
   <hr width="100%">
 
@@ -55,13 +41,15 @@
     <% end %>
 
 
-
-
-
   </div>
+
+
+
   <div class="container-fluid" style=" margin-bottom: 30px;
           box-shadow: 0px 0px 5px grey;
           border-radius: 8px;">
+
+    <%= link_to(new_producto_inmueble_path) do %>
     <div class="row" style="cursor: pointer;"
          onmouseover="
          this.style.boxShadow='0px 0px 5px blue',
@@ -87,67 +75,80 @@
         <br><br><br><br><br><br><br><br><br><br><br>
       </div>
     </div>
-
+    <% end %>
   </div>
+
+
+
   <div class="container-fluid" style=" margin-bottom: 30px;
           box-shadow: 0px 0px 5px grey;
           border-radius: 8px;">
-    <div class="row" style="cursor: pointer;"
-         onmouseover="
-         this.style.boxShadow='0px 0px 5px blue',
-                 this.style.borderRadius='8px'
-         "
-         onmouseout="
-         this.style.boxShadow=''
 
-         ">
+    <%= link_to(new_producto_vehiculo_path) do %>
+        <div class="row" style="cursor: pointer;"
+             onmouseover="
+             this.style.boxShadow='0px 0px 5px blue',
+                     this.style.borderRadius='8px'
+             "
+             onmouseout="
+             this.style.boxShadow=''
 
-      <div class="col-sm-5">
-        <h3>Vehículos</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit asdcrespt tru ansde asperas das...</p>
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-      </div>
-      <div class="col-sm-7"
-           style="
-           background-image: url('<%= image_path("vehiculos.png").to_s %>');
-                   background-repeat: no-repeat;
-                   background-position: right;
-                   background-size: 430px 240px;"
-      >
-        <br><br><br><br><br><br><br><br><br><br><br>
-      </div>
-    </div>
+             ">
 
+          <div class="col-sm-5">
+            <h3>Vehículos</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit asdcrespt tru ansde asperas das...</p>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+          </div>
+          <div class="col-sm-7"
+               style="
+               background-image: url('<%= image_path("vehiculos.png").to_s %>');
+                       background-repeat: no-repeat;
+                       background-position: right;
+                       background-size: 430px 240px;"
+          >
+            <br><br><br><br><br><br><br><br><br><br><br>
+          </div>
+        </div>
+    <% end %>
   </div>
+
+
+
   <div class="container-fluid" style=" margin-bottom: 30px;
           box-shadow: 0px 0px 5px grey;
           border-radius: 8px;">
-    <div class="row" style="cursor: pointer;"
-         onmouseover="
-         this.style.boxShadow='0px 0px 5px blue',
-                 this.style.borderRadius='8px'
-         "
-         onmouseout="
-         this.style.boxShadow=''
 
-         ">
+    <%= link_to(new_producto_tecnologium_path) do %>
+        <div class="row" style="cursor: pointer;"
+             onmouseover="
+             this.style.boxShadow='0px 0px 5px blue',
+                     this.style.borderRadius='8px'
+             "
+             onmouseout="
+             this.style.boxShadow=''
 
-      <div class="col-sm-5">
-        <h3>Tecnológico</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit asdcrespt tru ansde asperas das...</p>
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-      </div>
-      <div class="col-sm-7"
-           style="
-           background-image: url('<%= image_path("tecnologico.png").to_s %>');
-                   background-repeat: no-repeat;
-                   background-position: right;
-                   background-size: 430px 240px;"
-      >
-        <br><br><br><br><br><br><br><br><br><br><br>
-      </div>
-    </div>
+             ">
 
+          <div class="col-sm-5">
+            <h3>Tecnológico</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit asdcrespt tru ansde asperas das...</p>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+          </div>
+          <div class="col-sm-7"
+               style="
+               background-image: url('<%= image_path("tecnologico.png").to_s %>');
+                       background-repeat: no-repeat;
+                       background-position: right;
+                       background-size: 430px 240px;"
+          >
+            <br><br><br><br><br><br><br><br><br><br><br>
+          </div>
+        </div>
+    <% end %>
   </div>
 
-</div>
+
+
+
+  </div>

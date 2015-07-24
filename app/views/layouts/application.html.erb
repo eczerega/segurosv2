@@ -17,7 +17,22 @@
         background-size: cover;
     }
 
+    a {
+        background-color: transparent;
+        color: #2c2c2c;
+    }
+    a:hover {
+        background-color: transparent;
+        color: #2c2c2c;
+    }
+    a:visited {
+        background-color: transparent;
+        color: #2c2c2c;
+    }
+
   </style>
+
+
 </head>
 <body>
 
@@ -47,7 +62,7 @@
         <div class="col-sm-8">
           <br>
           <% if current_user? %>
-              <p class="text-right">Bienvenido <b><%= current_user.nombre %></b></p>
+              <p class="text-right">Bienvenido <b><%= current_user.nombre %></b> | <%= link_to "Salir", session_path, method: :delete %></p>
 
           <% else %>
               <p class="text-right">No ha iniciado sesión</p>
@@ -57,7 +72,6 @@
                 <li role="presentation"><a href="<%= inicio_path %>"><h4>Vender</h4></a></li>
                 <li role="presentation"><a href="#"><h4>Historial</h4></a></li>
                 <li role="presentation"><a href="<%= perfil_path %>"><h4>Perfil</h4></a></li>
-                <li role="presentation"><a href="#"><h4>Salir</h4></a></li>
 
               </ul>
 
@@ -70,6 +84,7 @@
       </div>
 
       <hr width="100%">
+
       <%= yield %>
 
     </div>

@@ -26,6 +26,8 @@ Rails.application.routes.draw do
     end
   end
 
+
+
   root 'sessions#new'
 
   #Ruta pa Twilio
@@ -36,6 +38,8 @@ Rails.application.routes.draw do
 
   #Ruta para el perfil
   get '/perfil' => 'perfil#perfil', as: 'perfil'
+
+
 
   #sesiones
   resource :session, only: [:new, :create, :destroy]
