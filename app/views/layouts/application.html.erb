@@ -68,12 +68,28 @@
               <p class="text-right">No ha iniciado sesión</p>
           <% end %>
 
+
+          <% if current_user.tipo ==1 %>
+
+              <ul class="nav nav-pills">
+                <li role="presentation"><a href="<%= inicio_path %>"><h4>Agregar datos</h4></a></li>
+                <li role="presentation"><a href="#"><h4>Eliminar datos</h4></a></li>
+              </ul>
+
+          <%  elsif current_user.tipo ==2 %>
+              <ul class="nav nav-pills">
+                <li role="presentation"><a href="<%= perfil_path %>"><h4>Inicio</h4></a></li>
+                <li role="presentation"><a href="<%= inicio_path %>"><h4>Agregar vendedor</h4></a></li>
+                <li role="presentation"><a href="#"><h4>Estadísticas</h4></a></li>
+              </ul>
+          <% else current_user.tipo ==3 %>
               <ul class="nav nav-pills">
                 <li role="presentation"><a href="<%= inicio_path %>"><h4>Vender</h4></a></li>
                 <li role="presentation"><a href="#"><h4>Historial</h4></a></li>
                 <li role="presentation"><a href="<%= perfil_path %>"><h4>Perfil</h4></a></li>
-
               </ul>
+          <% end %>
+
 
 
 

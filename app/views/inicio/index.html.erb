@@ -1,154 +1,357 @@
 
-<div class="container-fluid">
-<h1>Vender un producto</h1>
-<p>Selecciona el tipo de producto que quieres vender.</p>
+<style>
+
+  .tabla
+  {
+      float: left;
+      cursor: pointer;
+      margin-right: 100px;
+      margin-bottom: 30px;
+  }
+
+  .tabla:hover
+  {
+      color: #549dff;
+  }
+  .dentro
+  {
+      width: 130px;
+      height: 130px;
+      background: #638ff3;
+      -moz-border-radius: 80px;
+      -webkit-border-radius: 80px;
+      border-radius: 80px;
+      text-align: center;
+      color: #ffffff;
+      vertical-align: middle;
+      display:table;
+  }
+
+</style>
 
 
-  <hr width="100%">
-
-  <div class="container-fluid" style=" margin-bottom: 30px;
-          box-shadow: 0px 0px 5px grey;
-          border-radius: 8px;">
-
-    <%= link_to(new_producto_persona_path) do %>
-        <div
-
-        class="row" style="cursor: pointer;"
-        onmouseover="
-        this.style.boxShadow='0px 0px 5px blue',
-                this.style.borderRadius='8px'
-        "
-        onmouseout="
-        this.style.boxShadow=''
-
-        ">
-
-          <div class="col-sm-5">
-            <h3>Personas</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit asdcrespt tru ansde asperas das...</p>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-          </div>
-          <div class="col-sm-7"
-               style="
-               background-image: url('<%= image_path("personas.png").to_s %>');
-                       background-repeat: no-repeat;
-                       background-position: right;
-                       background-size: 430px 240px;"
-          >
-            <br><br><br><br><br><br><br><br><br><br><br>
-          </div>
-        </div>
-    <% end %>
+<% if current_user.tipo ==1 %>
+    <div class="container-fluid">
+      <div class="row"  style="padding: 55px 0px 25px 200px; ">
 
 
-  </div>
+        <%= link_to(new_compania_seguro_path) do %>
+        <table class="tabla">
+          <tr>
+            <td align="center"><div class="dentro">
+
+              <i class="fa fa-university fa-5x" style="
+              display:table-cell;
+                      vertical-align: middle;"></i>
+
+            </div></td>
+          </tr>
+          <tr>
+            <td><h4>&nbsp Cía Seguros</h4></td>
+          </tr>
+        </table>
+        <% end %>
+
+        <%= link_to(new_usuario_path) do %>
+            <table class="tabla">
+              <tr>
+                <td align="center"><div class="dentro">
+
+                  <i class="fa fa-user fa-5x" style="
+                  display:table-cell;
+                          vertical-align: middle;"></i>
+
+                </div></td>
+              </tr>
+              <tr>
+                <td><h4>&nbsp Administrador</h4></td>
+              </tr>
+            </table>
+        <% end %>
+        <%= link_to(new_puntos_ventum_path) do %>
+            <table class="tabla">
+              <tr>
+                <td align="center"><div class="dentro">
+
+                  <i class="fa fa-money fa-5x" style="
+                  display:table-cell;
+                          vertical-align: middle;"></i>
+
+                </div></td>
+              </tr>
+              <tr>
+                <td><h4>&nbsp Punto venta</h4></td>
+              </tr>
+            </table>
+        <% end %>
+        <%= link_to(new_empresas_grande_path) do %>
+            <table class="tabla">
+              <tr>
+                <td align="center"><div class="dentro">
+
+                  <i class="fa fa-building fa-5x" style="
+                  display:table-cell;
+                          vertical-align: middle;"></i>
+
+                </div></td>
+              </tr>
+              <tr>
+                <td><h4>&nbsp Empresa grande</h4></td>
+              </tr>
+            </table>
+        <% end %>
+        <%= link_to(new_informacion_producto_path) do %>
+            <table class="tabla">
+              <tr>
+                <td align="center"><div class="dentro">
+
+                  <i class="fa fa-info fa-5x" style="
+                  display:table-cell;
+                          vertical-align: middle;"></i>
+
+                </div></td>
+              </tr>
+              <tr>
+                <td><h4>&nbsp Info productos</h4></td>
+              </tr>
+            </table>
+        <% end %>
+
+        <%= link_to(new_producto_tecnologium_path) do %>
+            <table class="tabla">
+              <tr>
+                <td align="center"><div class="dentro">
+
+                  <i class="fa fa-desktop fa-5x" style="
+                  display:table-cell;
+                          vertical-align: middle;"></i>
+
+                </div></td>
+              </tr>
+              <tr>
+                <td><h4>&nbsp P. Tecnología</h4></td>
+              </tr>
+            </table>
+        <% end %>
+
+        <%= link_to(new_producto_persona_path) do %>
+            <table class="tabla">
+              <tr>
+                <td align="center"><div class="dentro">
+
+                  <i class="fa fa-male fa-5x" style="
+                  display:table-cell;
+                          vertical-align: middle;"></i>
+
+                </div></td>
+              </tr>
+              <tr>
+                <td><h4>&nbsp P.Personas</h4></td>
+              </tr>
+            </table>
+        <% end %>
+
+        <%= link_to(new_producto_vehiculo_path) do %>
+            <table class="tabla">
+              <tr>
+                <td align="center"><div class="dentro">
+
+                  <i class="fa fa-car fa-5x" style="
+                  display:table-cell;
+                          vertical-align: middle;"></i>
+
+                </div></td>
+              </tr>
+              <tr>
+                <td><h4>&nbsp P.Vehículos</h4></td>
+              </tr>
+            </table>
+        <% end %>
+
+        <%= link_to( new_producto_inmueble_path) do %>
+            <table class="tabla">
+              <tr>
+                <td align="center"><div class="dentro">
+
+                  <i class="fa fa-home fa-5x" style="
+                  display:table-cell;
+                          vertical-align: middle;"></i>
+
+                </div></td>
+              </tr>
+              <tr>
+                <td><h4>&nbsp P.Inmuebles</h4></td>
+              </tr>
+            </table>
+        <% end %>
 
 
 
-  <div class="container-fluid" style=" margin-bottom: 30px;
-          box-shadow: 0px 0px 5px grey;
-          border-radius: 8px;">
 
-    <%= link_to(new_producto_inmueble_path) do %>
-    <div class="row" style="cursor: pointer;"
-         onmouseover="
-         this.style.boxShadow='0px 0px 5px blue',
-                 this.style.borderRadius='8px'
-         "
-         onmouseout="
-         this.style.boxShadow=''
 
-         ">
 
-      <div class="col-sm-5">
-        <h3>Hogares</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit asdcrespt tru ansde asperas das...</p>
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+
+
       </div>
-      <div class="col-sm-7"
-           style="
-           background-image: url('<%= image_path("casa.png").to_s %>');
-                   background-repeat: no-repeat;
-                   background-position: right;
-                   background-size: 430px 240px;"
-      >
-        <br><br><br><br><br><br><br><br><br><br><br>
-      </div>
+
     </div>
-    <% end %>
-  </div>
 
 
 
-  <div class="container-fluid" style=" margin-bottom: 30px;
-          box-shadow: 0px 0px 5px grey;
-          border-radius: 8px;">
-
-    <%= link_to(new_producto_vehiculo_path) do %>
-        <div class="row" style="cursor: pointer;"
-             onmouseover="
-             this.style.boxShadow='0px 0px 5px blue',
-                     this.style.borderRadius='8px'
-             "
-             onmouseout="
-             this.style.boxShadow=''
-
-             ">
-
-          <div class="col-sm-5">
-            <h3>Vehículos</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit asdcrespt tru ansde asperas das...</p>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-          </div>
-          <div class="col-sm-7"
-               style="
-               background-image: url('<%= image_path("vehiculos.png").to_s %>');
-                       background-repeat: no-repeat;
-                       background-position: right;
-                       background-size: 430px 240px;"
-          >
-            <br><br><br><br><br><br><br><br><br><br><br>
-          </div>
-        </div>
-    <% end %>
-  </div>
+<%  elsif current_user.tipo ==2 %>
+    Tipo 2
+<% else current_user.tipo ==3 %>
+    <div class="container-fluid">
+      <h1>Vender un producto</h1>
+      <p>Selecciona el tipo de producto que quieres vender.</p>
 
 
+      <hr width="100%">
 
-  <div class="container-fluid" style=" margin-bottom: 30px;
-          box-shadow: 0px 0px 5px grey;
-          border-radius: 8px;">
+      <div class="container-fluid" style=" margin-bottom: 30px;
+              box-shadow: 0px 0px 5px grey;
+              border-radius: 8px;">
 
-    <%= link_to(new_producto_tecnologium_path) do %>
-        <div class="row" style="cursor: pointer;"
-             onmouseover="
-             this.style.boxShadow='0px 0px 5px blue',
-                     this.style.borderRadius='8px'
-             "
-             onmouseout="
-             this.style.boxShadow=''
+        <%= link_to(new_producto_persona_path) do %>
+            <div
 
-             ">
+            class="row" style="cursor: pointer;"
+            onmouseover="
+            this.style.boxShadow='0px 0px 5px blue',
+                    this.style.borderRadius='8px'
+            "
+            onmouseout="
+            this.style.boxShadow=''
 
-          <div class="col-sm-5">
-            <h3>Tecnológico</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit asdcrespt tru ansde asperas das...</p>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-          </div>
-          <div class="col-sm-7"
-               style="
-               background-image: url('<%= image_path("tecnologico.png").to_s %>');
-                       background-repeat: no-repeat;
-                       background-position: right;
-                       background-size: 430px 240px;"
-          >
-            <br><br><br><br><br><br><br><br><br><br><br>
-          </div>
-        </div>
-    <% end %>
-  </div>
+            ">
+
+              <div class="col-sm-5">
+                <h3>Personas</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit asdcrespt tru ansde asperas das...</p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+              </div>
+              <div class="col-sm-7"
+                   style="
+                   background-image: url('<%= image_path("personas.png").to_s %>');
+                           background-repeat: no-repeat;
+                           background-position: right;
+                           background-size: 430px 240px;"
+              >
+                <br><br><br><br><br><br><br><br><br><br><br>
+              </div>
+            </div>
+        <% end %>
+
+
+      </div>
 
 
 
+      <div class="container-fluid" style=" margin-bottom: 30px;
+              box-shadow: 0px 0px 5px grey;
+              border-radius: 8px;">
 
-  </div>
+        <%= link_to(new_producto_inmueble_path) do %>
+            <div class="row" style="cursor: pointer;"
+                 onmouseover="
+                 this.style.boxShadow='0px 0px 5px blue',
+                         this.style.borderRadius='8px'
+                 "
+                 onmouseout="
+                 this.style.boxShadow=''
+
+                 ">
+
+              <div class="col-sm-5">
+                <h3>Hogares</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit asdcrespt tru ansde asperas das...</p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+              </div>
+              <div class="col-sm-7"
+                   style="
+                   background-image: url('<%= image_path("casa.png").to_s %>');
+                           background-repeat: no-repeat;
+                           background-position: right;
+                           background-size: 430px 240px;"
+              >
+                <br><br><br><br><br><br><br><br><br><br><br>
+              </div>
+            </div>
+        <% end %>
+      </div>
+
+
+
+      <div class="container-fluid" style=" margin-bottom: 30px;
+              box-shadow: 0px 0px 5px grey;
+              border-radius: 8px;">
+
+        <%= link_to(new_producto_vehiculo_path) do %>
+            <div class="row" style="cursor: pointer;"
+                 onmouseover="
+                 this.style.boxShadow='0px 0px 5px blue',
+                         this.style.borderRadius='8px'
+                 "
+                 onmouseout="
+                 this.style.boxShadow=''
+
+                 ">
+
+              <div class="col-sm-5">
+                <h3>Vehículos</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit asdcrespt tru ansde asperas das...</p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+              </div>
+              <div class="col-sm-7"
+                   style="
+                   background-image: url('<%= image_path("vehiculos.png").to_s %>');
+                           background-repeat: no-repeat;
+                           background-position: right;
+                           background-size: 430px 240px;"
+              >
+                <br><br><br><br><br><br><br><br><br><br><br>
+              </div>
+            </div>
+        <% end %>
+      </div>
+
+
+
+      <div class="container-fluid" style=" margin-bottom: 30px;
+              box-shadow: 0px 0px 5px grey;
+              border-radius: 8px;">
+
+        <%= link_to(new_producto_tecnologium_path) do %>
+            <div class="row" style="cursor: pointer;"
+                 onmouseover="
+                 this.style.boxShadow='0px 0px 5px blue',
+                         this.style.borderRadius='8px'
+                 "
+                 onmouseout="
+                 this.style.boxShadow=''
+
+                 ">
+
+              <div class="col-sm-5">
+                <h3>Tecnológico</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit asdcrespt tru ansde asperas das...</p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+              </div>
+              <div class="col-sm-7"
+                   style="
+                   background-image: url('<%= image_path("tecnologico.png").to_s %>');
+                           background-repeat: no-repeat;
+                           background-position: right;
+                           background-size: 430px 240px;"
+              >
+                <br><br><br><br><br><br><br><br><br><br><br>
+              </div>
+            </div>
+        <% end %>
+      </div>
+
+
+
+
+    </div>
+<% end %>
