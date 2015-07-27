@@ -5,8 +5,10 @@
   {
       float: left;
       cursor: pointer;
-      margin-right: 100px;
+      margin-right: 70px;
       margin-bottom: 30px;
+      height: 120px;
+      width: 100px;
   }
 
   .tabla:hover
@@ -15,10 +17,10 @@
   }
   .dentro
   {
-      width: 130px;
-      height: 130px;
+      width: 80px;
+      height: 80px;
       background: #638ff3;
-      -moz-border-radius: 80px;
+      -moz-border-radius: 50px;
       -webkit-border-radius: 80px;
       border-radius: 80px;
       text-align: center;
@@ -29,10 +31,10 @@
 
 </style>
 
-
+<!-- 55px 0px 25px 200px; -->
 <% if current_user.tipo ==1 %>
     <div class="container-fluid">
-      <div class="row"  style="padding: 55px 0px 25px 200px; ">
+      <div class="row"  style="padding-left: 15%">
 
 
         <%= link_to(new_compania_seguro_path) do %>
@@ -40,14 +42,14 @@
           <tr>
             <td align="center"><div class="dentro">
 
-              <i class="fa fa-university fa-5x" style="
+              <i class="glyphicon glyphicon-tower" style="
               display:table-cell;
                       vertical-align: middle;"></i>
 
             </div></td>
           </tr>
           <tr>
-            <td><h4>&nbsp Cía Seguros</h4></td>
+            <td><h5>&nbsp Cía Seguros</h5></td>
           </tr>
         </table>
         <% end %>
@@ -57,14 +59,14 @@
               <tr>
                 <td align="center"><div class="dentro">
 
-                  <i class="fa fa-user fa-5x" style="
+                  <i class="glyphicon glyphicon-tower" style="
                   display:table-cell;
                           vertical-align: middle;"></i>
 
                 </div></td>
               </tr>
               <tr>
-                <td><h4>&nbsp Administrador</h4></td>
+                <td><h5>&nbsp Administrador</h5></td>
               </tr>
             </table>
         <% end %>
@@ -73,14 +75,14 @@
               <tr>
                 <td align="center"><div class="dentro">
 
-                  <i class="fa fa-money fa-5x" style="
+                  <i class="glyphicon glyphicon-tower" style="
                   display:table-cell;
                           vertical-align: middle;"></i>
 
                 </div></td>
               </tr>
               <tr>
-                <td><h4>&nbsp Punto venta</h4></td>
+                <td><h5>&nbsp Punto venta</h5></td>
               </tr>
             </table>
         <% end %>
@@ -89,14 +91,14 @@
               <tr>
                 <td align="center"><div class="dentro">
 
-                  <i class="fa fa-building fa-5x" style="
+                  <i class="glyphicon glyphicon-tower" style="
                   display:table-cell;
                           vertical-align: middle;"></i>
 
                 </div></td>
               </tr>
               <tr>
-                <td><h4>&nbsp Empresa grande</h4></td>
+                <td><h5>&nbsp E.Grande</h5></td>
               </tr>
             </table>
         <% end %>
@@ -105,14 +107,14 @@
               <tr>
                 <td align="center"><div class="dentro">
 
-                  <i class="fa fa-info fa-5x" style="
+                  <i class="glyphicon glyphicon-tower" style="
                   display:table-cell;
                           vertical-align: middle;"></i>
 
                 </div></td>
               </tr>
               <tr>
-                <td><h4>&nbsp Info productos</h4></td>
+                <td><h5>&nbsp I.Productos</h5></td>
               </tr>
             </table>
         <% end %>
@@ -122,14 +124,14 @@
               <tr>
                 <td align="center"><div class="dentro">
 
-                  <i class="fa fa-desktop fa-5x" style="
+                  <i class="glyphicon glyphicon-tower" style="
                   display:table-cell;
                           vertical-align: middle;"></i>
 
                 </div></td>
               </tr>
               <tr>
-                <td><h4>&nbsp P. Tecnología</h4></td>
+                <td><h5>&nbsp P. Tecnología</h5></td>
               </tr>
             </table>
         <% end %>
@@ -139,14 +141,14 @@
               <tr>
                 <td align="center"><div class="dentro">
 
-                  <i class="fa fa-male fa-5x" style="
+                  <i class="glyphicon glyphicon-tower" style="
                   display:table-cell;
                           vertical-align: middle;"></i>
 
                 </div></td>
               </tr>
               <tr>
-                <td><h4>&nbsp P.Personas</h4></td>
+                <td><h5>&nbsp P.Personas</h5></td>
               </tr>
             </table>
         <% end %>
@@ -156,14 +158,14 @@
               <tr>
                 <td align="center"><div class="dentro">
 
-                  <i class="fa fa-car fa-5x" style="
+                  <i class="glyphicon glyphicon-tower" style="
                   display:table-cell;
                           vertical-align: middle;"></i>
 
                 </div></td>
               </tr>
               <tr>
-                <td><h4>&nbsp P.Vehículos</h4></td>
+                <td><h5>&nbsp P.Vehículos</h5></td>
               </tr>
             </table>
         <% end %>
@@ -173,14 +175,14 @@
               <tr>
                 <td align="center"><div class="dentro">
 
-                  <i class="fa fa-home fa-5x" style="
+                  <i class="fglyphicon glyphicon-tower" style="
                   display:table-cell;
                           vertical-align: middle;"></i>
 
                 </div></td>
               </tr>
               <tr>
-                <td><h4>&nbsp P.Inmuebles</h4></td>
+                <td><h5>&nbsp P.Inmuebles</h5></td>
               </tr>
             </table>
         <% end %>
@@ -199,7 +201,22 @@
 
 
 <%  elsif current_user.tipo ==2 %>
-    Tipo 2
+    <%= link_to(new_usuario_path) do %>
+        <table class="tabla">
+          <tr>
+            <td align="center"><div class="dentro">
+
+              <i class="fa fa-user fa-5x" style="
+              display:table-cell;
+                      vertical-align: middle;"></i>
+
+            </div></td>
+          </tr>
+          <tr>
+            <td><h4>&nbsp Agregar vendedor</h4></td>
+          </tr>
+        </table>
+    <% end %>
 <% else current_user.tipo ==3 %>
     <div class="container-fluid">
       <h1>Vender un producto</h1>
