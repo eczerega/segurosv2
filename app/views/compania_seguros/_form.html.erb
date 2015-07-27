@@ -1,53 +1,63 @@
-<%= form_for(@compania_seguro) do |f| %>
-  <% if @compania_seguro.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@compania_seguro.errors.count, "error") %> prohibited this compania_seguro from being saved:</h2>
 
-      <ul>
-      <% @compania_seguro.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+
+
+
+<div class="container">
+  <h2>Agregar una compañía de seguros.</h2>
+  <p>Ingrese los datos necesarios para agregar una nueva compañía de seguros.</p>
+
+
+
+
+
+  <%= form_for(@compania_seguro) do |f| %>
+      <% if @compania_seguro.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@compania_seguro.errors.count, "error") %> prohibited this compania_seguro from being saved:</h2>
+
+            <ul>
+              <% @compania_seguro.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
       <% end %>
-      </ul>
-    </div>
+
+      <div class="form-group">
+        <%= f.label :nombre %><br>
+        <%= f.text_field :nombre, :class => "form-control" %>
+      </div>
+      <div class="field">
+        <%= f.label :rut %><br>
+        <%= f.text_field :rut , :class => "form-control" %>
+      </div>
+      <div class="field">
+        <%= f.label :dv %><br>
+        <%= f.text_field :dv , :class => "form-control" %>
+      </div>
+      <div class="field">
+        <%= f.label :banco %><br>
+        <%= f.text_field :banco , :class => "form-control" %>
+      </div>
+      <div class="field">
+        <%= f.label :cuenta_bancaria %><br>
+        <%= f.text_field :cuenta_bancaria , :class => "form-control" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :image %><br>
+        <%= f.text_field :image , :class => "form-control" %>
+      </div>
+      <div class="actions">
+        <%= f.submit 'Crear compañía de seguros', :class => 'btn btn-primary' %>
+      </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :nombre %><br>
-    <%= f.text_field :nombre %>
-  </div>
-  <div class="field">
-    <%= f.label :rut %><br>
-    <%= f.text_field :rut %>
-  </div>
-  <div class="field">
-    <%= f.label :dv %><br>
-    <%= f.text_field :dv %>
-  </div>
-  <div class="field">
-    <%= f.label :banco %><br>
-    <%= f.text_field :banco %>
-  </div>
-  <div class="field">
-    <%= f.label :cuenta_bancaria %><br>
-    <%= f.text_field :cuenta_bancaria %>
-  </div>
-  <div class="field">
-    <%= f.label :aux1 %><br>
-    <%= f.text_field :aux1 %>
-  </div>
-  <div class="field">
-    <%= f.label :aux2 %><br>
-    <%= f.text_field :aux2 %>
-  </div>
-  <div class="field">
-    <%= f.label :aux3 %><br>
-    <%= f.text_field :aux3 %>
-  </div>
-  <div class="field">
-    <%= f.label :image %><br>
-    <%= f.text_field :image %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+
+</div>
+
+
+
+
+
+

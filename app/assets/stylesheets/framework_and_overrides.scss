@@ -5,7 +5,12 @@
 @import "font-awesome";
 
 
-
+.form-control
+{
+  position: relative;
+  max-width: 80%;
+  align-self: center;
+}
 .active
 {
   background-color: #335afa;
