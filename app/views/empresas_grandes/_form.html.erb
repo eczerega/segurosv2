@@ -1,4 +1,11 @@
-<%= form_for(@empresas_grande) do |f| %>
+<div class="container">
+  <h2>Agregar una empresa grande.</h2>
+  <p>Ingrese los datos necesarios para agregar una nueva empresa grande.</p>
+
+
+
+
+  <%= form_for(@empresas_grande) do |f| %>
   <% if @empresas_grande.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@empresas_grande.errors.count, "error") %> prohibited this empresas_grande from being saved:</h2>
@@ -13,33 +20,22 @@
 
   <div class="field">
     <%= f.label :nombre %><br>
-    <%= f.text_field :nombre %>
+    <%= f.text_field :nombre , :class => "form-control" %>
   </div>
   <div class="field">
     <%= f.label :representante_legal_rut %><br>
-    <%= f.text_field :representante_legal_rut %>
+    <%= f.text_field :representante_legal_rut , :class => "form-control" %>
   </div>
   <div class="field">
     <%= f.label :dv %><br>
-    <%= f.number_field :dv %>
-  </div>
-  <div class="field">
-    <%= f.label :aux1 %><br>
-    <%= f.text_field :aux1 %>
-  </div>
-  <div class="field">
-    <%= f.label :aux2 %><br>
-    <%= f.text_field :aux2 %>
-  </div>
-  <div class="field">
-    <%= f.label :aux3 %><br>
-    <%= f.text_field :aux3 %>
+    <%= f.number_field :dv , :class => "form-control" %>
   </div>
   <div class="field">
     <%= f.label :image %><br>
-    <%= f.text_field :image %>
+    <%= f.text_field :image , :class => "form-control" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Crear empresa grande', :class => 'btn btn-primary' %>
   </div>
 <% end %>
+</div>

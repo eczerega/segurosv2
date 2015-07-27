@@ -1,4 +1,13 @@
-<%= form_for(@informacion_producto) do |f| %>
+
+
+<div class="container">
+  <h2>Agregar información relacionada con un producto.</h2>
+  <p>Ingrese los datos necesarios del nuevo producto que se agregará.</p>
+
+
+
+
+  <%= form_for(@informacion_producto) do |f| %>
   <% if @informacion_producto.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@informacion_producto.errors.count, "error") %> prohibited this informacion_producto from being saved:</h2>
@@ -13,45 +22,35 @@
 
   <div class="field">
     <%= f.label :nombre %><br>
-    <%= f.text_field :nombre %>
+    <%= f.text_field :nombre , :class => "form-control" %>
   </div>
   <div class="field">
     <%= f.label :tipo %><br>
-    <%= f.text_field :tipo %>
+    <%= f.text_field :tipo , :class => "form-control" %>
   </div>
   <div class="field">
     <%= f.label :prima %><br>
-    <%= f.number_field :prima %>
+    <%= f.number_field :prima , :class => "form-control" %>
   </div>
   <div class="field">
     <%= f.label :valor_asegurado %><br>
-    <%= f.number_field :valor_asegurado %>
+    <%= f.number_field :valor_asegurado , :class => "form-control" %>
   </div>
   <div class="field">
     <%= f.label :duracion_meses %><br>
-    <%= f.number_field :duracion_meses %>
+    <%= f.number_field :duracion_meses , :class => "form-control" %>
   </div>
   <div class="field">
     <%= f.label :aseguradora_responsable_id %><br>
-    <%= f.number_field :aseguradora_responsable_id %>
+    <%= f.number_field :aseguradora_responsable_id , :class => "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :aux1 %><br>
-    <%= f.text_field :aux1 %>
-  </div>
-  <div class="field">
-    <%= f.label :aux2 %><br>
-    <%= f.text_field :aux2 %>
-  </div>
-  <div class="field">
-    <%= f.label :aux3 %><br>
-    <%= f.text_field :aux3 %>
-  </div>
+
   <div class="field">
     <%= f.label :image %><br>
-    <%= f.text_field :image %>
+    <%= f.text_field :image , :class => "form-control" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Agregar  información de producto ', :class => 'btn btn-primary' %>
   </div>
 <% end %>
+</div>

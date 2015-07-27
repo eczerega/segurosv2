@@ -1,4 +1,13 @@
-<%= form_for(@producto_persona) do |f| %>
+
+
+<div class="container">
+  <h2>Vender un producto persona.</h2>
+  <p>Ingrese los datos necesarios para efectuar la venta .</p>
+
+
+
+
+  <%= form_for(@producto_persona) do |f| %>
   <% if @producto_persona.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@producto_persona.errors.count, "error") %> prohibited this producto_persona from being saved:</h2>
@@ -13,65 +22,66 @@
 
   <div class="field">
     <%= f.label :producto %><br>
-    <%= f.text_field :producto %>
+    <%= f.text_field :producto , :class => "form-control" %>
   </div>
   <div class="field">
     <%= f.label :nombre_comprador %><br>
-    <%= f.text_field :nombre_comprador %>
+    <%= f.text_field :nombre_comprador , :class => "form-control" %>
   </div>
   <div class="field">
     <%= f.label :apellido_comprador %><br>
-    <%= f.text_field :apellido_comprador %>
+    <%= f.text_field :apellido_comprador , :class => "form-control" %>
   </div>
   <div class="field">
     <%= f.label :rut_comprador %><br>
-    <%= f.text_field :rut_comprador %>
+    <%= f.text_field :rut_comprador , :class => "form-control" %>
   </div>
   <div class="field">
     <%= f.label :digito_verifiador_comprador %><br>
-    <%= f.number_field :digito_verifiador_comprador %>
+    <%= f.number_field :digito_verifiador_comprador , :class => "form-control" %>
   </div>
   <div class="field">
     <%= f.label :email_comprador %><br>
-    <%= f.text_field :email_comprador %>
+    <%= f.text_field :email_comprador , :class => "form-control" %>
   </div>
   <div class="field">
     <%= f.label :numero_comprador %><br>
-    <%= f.text_field :numero_comprador %>
+    <%= f.text_field :numero_comprador , :class => "form-control" %>
   </div>
   <div class="field">
     <%= f.label :nombre_asegurado %><br>
-    <%= f.text_field :nombre_asegurado %>
+    <%= f.text_field :nombre_asegurado , :class => "form-control" %>
   </div>
   <div class="field">
     <%= f.label :apellido_asegurado %><br>
-    <%= f.text_field :apellido_asegurado %>
+    <%= f.text_field :apellido_asegurado , :class => "form-control" %>
   </div>
   <div class="field">
     <%= f.label :rut_asegurado %><br>
-    <%= f.text_field :rut_asegurado %>
+    <%= f.text_field :rut_asegurado , :class => "form-control" %>
   </div>
   <div class="field">
     <%= f.label :digito_verificador_asegurado %><br>
-    <%= f.number_field :digito_verificador_asegurado %>
+    <%= f.number_field :digito_verificador_asegurado , :class => "form-control" %>
   </div>
   <div class="field">
     <%= f.label :email_asegurado %><br>
-    <%= f.text_field :email_asegurado %>
+    <%= f.text_field :email_asegurado , :class => "form-control" %>
   </div>
   <div class="field">
     <%= f.label :numero_asegurado %><br>
-    <%= f.text_field :numero_asegurado %>
+    <%= f.text_field :numero_asegurado , :class => "form-control" %>
   </div>
   <div class="field">
     <%= f.label :fecha_inicio %><br>
-    <%= f.date_select :fecha_inicio %>
+    <%= f.date_select :fecha_inicio , :class => "form-control" %>
   </div>
   <div class="field">
     <%= f.label :fecha_termino %><br>
-    <%= f.date_select :fecha_termino %>
+    <%= f.date_select :fecha_termino , :class => "form-control" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Vender!', :class => 'btn btn-primary' %>
   </div>
 <% end %>
+</div>

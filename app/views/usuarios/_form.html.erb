@@ -1,4 +1,14 @@
-<%= form_for(@usuario) do |f| %>
+
+
+<div class="container">
+  <h2>Crear un usuario.</h2>
+  <p>Crear un usuario para el sistema.</p>
+
+
+
+
+
+  <%= form_for(@usuario) do |f| %>
   <% if @usuario.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@usuario.errors.count, "error") %> prohibited this usuario from being saved:</h2>
@@ -13,59 +23,61 @@
 
   <div class="field">
     <%= f.label :nombre %><br>
-    <%= f.text_field :nombre %>
+    <%= f.text_field :nombre , :class => "form-control" %>
   </div>
   <div class="field">
     <%= f.label :apellido %><br>
-    <%= f.text_field :apellido %>
+    <%= f.text_field :apellido , :class => "form-control" %>
   </div>
   <div class="field">
     <%= f.label :rut %><br>
-    <%= f.text_field :rut %>
+    <%= f.text_field :rut , :class => "form-control" %>
   </div>
   <div class="field">
     <%= f.label :dv %><br>
-    <%= f.number_field :dv %>
+    <%= f.number_field :dv , :class => "form-control" %>
   </div>
   <div class="field">
     <%= f.label :email %><br>
-    <%= f.text_field :email %>
+    <%= f.text_field :email , :class => "form-control" %>
   </div>
   <div class="field">
     <%= f.label :telefono_fijo %><br>
-    <%= f.text_field :telefono_fijo %>
+    <%= f.text_field :telefono_fijo , :class => "form-control" %>
   </div>
   <div class="field">
     <%= f.label :telefono_celular %><br>
-    <%= f.text_field :telefono_celular %>
+    <%= f.text_field :telefono_celular , :class => "form-control" %>
   </div>
   <div class="field">
     <%= f.label :password %><br>
-    <%= f.password_field :password %>
+    <%= f.password_field :password , :class => "form-control" %>
   </div>
 
     <div class="field">
       <%= f.label :password_confirmation %><br>
-      <%= f.password_field :password_confirmation %>
+      <%= f.password_field :password_confirmation , :class => "form-control" %>
     </div>
 
   <div class="field">
     <%= f.label :image %><br>
-    <%= f.file_field :image %>
+    <%= f.file_field :image , :class => "form-control" %>
   </div>
   <div class="field">
     <%= f.label :tipo %><br>
-    <%= f.number_field :tipo %>
+    <%= f.number_field :tipo , :class => "form-control" %>
   </div>
   <div class="field">
     <%= f.label :estado %><br>
-    <%= f.number_field :estado %>
+    <%= f.number_field :estado , :class => "form-control" %>
   </div>
   <div class="field">
     <%= f.label :punto_venta %><br>
-    <%= f.number_field :punto_venta %>
+    <%= f.number_field :punto_venta , :class => "form-control" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Crear  usuario', :class => 'btn btn-primary' %>
   </div>
 <% end %>
+
+    </div
