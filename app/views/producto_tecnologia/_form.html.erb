@@ -3,8 +3,6 @@
   <p>Ingrese los datos necesarios para efectuar la venta .</p>
 
 
-
-
   <%= form_for(@producto_tecnologium) do |f| %>
   <% if @producto_tecnologium.errors.any? %>
     <div id="error_explanation">
@@ -18,80 +16,87 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :producto %><br>
-    <%= f.text_field :producto , :class => "form-control" %>
-  </div>
-  <div class="field">
-    <%= f.label :tipo_producto %><br>
-    <%= f.text_field :tipo_producto, :class => "form-control" %>
-  </div>
-  <div class="field">
-    <%= f.label :marca %><br>
-    <%= f.text_field :marca , :class => "form-control" %>
-  </div>
-  <div class="field">
-    <%= f.label :anho %><br>
-    <%= f.number_field :anho , :class => "form-control" %>
-  </div>
-  <div class="field">
-    <%= f.label :fecha_inicio %><br>
-    <%= f.date_select :fecha_inicio , :class => "form-control" %>
-  </div>
-  <div class="field">
-    <%= f.label :fecha_termino %><br>
-    <%= f.date_select :fecha_termino , :class => "form-control" %>
-  </div>
-  <div class="field">
-    <%= f.label :nombre_comprador %><br>
-    <%= f.text_field :nombre_comprador , :class => "form-control" %>
-  </div>
-  <div class="field">
-    <%= f.label :apellido_comprador %><br>
-    <%= f.text_field :apellido_comprador , :class => "form-control" %>
-  </div>
-  <div class="field">
-    <%= f.label :rut_comprador %><br>
-    <%= f.text_field :rut_comprador , :class => "form-control" %>
-  </div>
-  <div class="field">
-    <%= f.label :digito_verifiador_comprador %><br>
-    <%= f.number_field :digito_verifiador_comprador , :class => "form-control" %>
-  </div>
-  <div class="field">
-    <%= f.label :email_comprador %><br>
-    <%= f.text_field :email_comprador , :class => "form-control" %>
-  </div>
-  <div class="field">
-    <%= f.label :numero_comprador %><br>
-    <%= f.text_field :numero_comprador , :class => "form-control" %>
-  </div>
-  <div class="field">
-    <%= f.label :nombre_asegurado %><br>
-    <%= f.text_field :nombre_asegurado , :class => "form-control" %>
-  </div>
-  <div class="field">
-    <%= f.label :apellido_asegurado %><br>
-    <%= f.text_field :apellido_asegurado , :class => "form-control" %>
-  </div>
-  <div class="field">
-    <%= f.label :rut_asegurado %><br>
-    <%= f.text_field :rut_asegurado , :class => "form-control" %>
-  </div>
-  <div class="field">
-    <%= f.label :digito_verificador_asegurado %><br>
-    <%= f.number_field :digito_verificador_asegurado , :class => "form-control" %>
-  </div>
-  <div class="field">
-    <%= f.label :email_asegurado %><br>
-    <%= f.text_field :email_asegurado , :class => "form-control" %>
-  </div>
-  <div class="field">
-    <%= f.label :numero_asegurado %><br>
-    <%= f.text_field :numero_asegurado , :class => "form-control" %>
-  </div><br>
-  <div class="actions">
-    <%= f.submit 'Vender!', :class => 'btn btn-primary' %>
-  </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <h3>Datos productos</h3>
+
+          <div class="field">
+            <%= f.label :producto %><br>
+            <%= f.text_field :producto , :class => "form-control" %>
+          </div>
+          <div class="field">
+            <%= f.label :tipo_producto %><br>
+            <%= f.text_field :tipo_producto, :class => "form-control" %>
+          </div>
+          <div class="field">
+            <%= f.label :marca %><br>
+            <%= f.text_field :marca , :class => "form-control" %>
+          </div>
+          <div class="field">
+            <%= f.label :anho %><br>
+            <%= f.number_field :anho , :class => "form-control" %>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <h3>Datos comprador</h3>
+
+          <div class="field">
+            <%= f.label :nombre_comprador %><br>
+            <%= f.text_field :nombre_comprador , :class => "form-control" %>
+          </div>
+          <div class="field">
+            <%= f.label :apellido_comprador %><br>
+            <%= f.text_field :apellido_comprador , :class => "form-control" %>
+          </div>
+          <div class="field">
+            <%= f.label :rut_comprador %><br>
+            <%= f.text_field :rut_comprador , :class => "form-control" %>
+          </div>
+          <div class="field">
+            <%= f.label :digito_verifiador_comprador %><br>
+            <%= f.number_field :digito_verifiador_comprador , :class => "form-control" %>
+          </div>
+          <div class="field">
+            <%= f.label :email_comprador %><br>
+            <%= f.text_field :email_comprador , :class => "form-control" %>
+          </div>
+          <div class="field">
+            <%= f.label :numero_comprador %><br>
+            <%= f.text_field :numero_comprador , :class => "form-control" %>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <h3>Datos asegurado</h3>
+          <div class="field">
+            <%= f.label :nombre_asegurado %><br>
+            <%= f.text_field :nombre_asegurado , :class => "form-control" %>
+          </div>
+          <div class="field">
+            <%= f.label :apellido_asegurado %><br>
+            <%= f.text_field :apellido_asegurado , :class => "form-control" %>
+          </div>
+          <div class="field">
+            <%= f.label :rut_asegurado %><br>
+            <%= f.text_field :rut_asegurado , :class => "form-control" %>
+          </div>
+          <div class="field">
+            <%= f.label :digito_verificador_asegurado %><br>
+            <%= f.number_field :digito_verificador_asegurado , :class => "form-control" %>
+          </div>
+          <div class="field">
+            <%= f.label :email_asegurado %><br>
+            <%= f.text_field :email_asegurado , :class => "form-control" %>
+          </div>
+          <div class="field">
+            <%= f.label :numero_asegurado %><br>
+            <%= f.text_field :numero_asegurado , :class => "form-control" %>
+          </div><br>
+          <div class="actions">
+            <%= f.submit 'Vender!', :class => 'btn btn-primary' %>
+          </div>
+        </div>
+      </div>
+
+
 <% end %>
 </div>
