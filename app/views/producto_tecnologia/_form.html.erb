@@ -1,4 +1,11 @@
-<%= form_for(@producto_tecnologium) do |f| %>
+<div class="container" style="width:  100%">
+  <h2>Vender un producto tecnología.</h2>
+  <p>Ingrese los datos necesarios para efectuar la venta .</p>
+
+
+
+
+  <%= form_for(@producto_tecnologium) do |f| %>
   <% if @producto_tecnologium.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@producto_tecnologium.errors.count, "error") %> prohibited this producto_tecnologium from being saved:</h2>
@@ -82,8 +89,9 @@
   <div class="field">
     <%= f.label :numero_asegurado %><br>
     <%= f.text_field :numero_asegurado , :class => "form-control" %>
-  </div>
+  </div><br>
   <div class="actions">
     <%= f.submit 'Vender!', :class => 'btn btn-primary' %>
   </div>
 <% end %>
+</div>
