@@ -1,0 +1,210 @@
+
+
+    $(document).ready(function(){
+       // alert('asasd');
+
+        var $nombre_asegurado = $(".nombre_asegurado");
+        var $apellido_asegurado = $(".apellido_asegurado");
+        var $rut_asegurado = $(".rut_asegurado");
+        var $dv_asegurado = $(".digito_verificador_asegurado");
+        var $email_asegurado = $(".email_asegurado");
+        var $validador_rut_comprador=false;
+        var $validador_rut_asegurado=false;
+
+        if ($('.beneficiario').is(":checked"))
+        {
+            $email_asegurado.css("background-color", "grey");
+            $email_asegurado.css("color", "#C0C0C0");
+            $email_asegurado.prop("readonly", true);
+
+            $nombre_asegurado.css("background-color", "grey");
+            $nombre_asegurado.css("color", "#C0C0C0");
+            $nombre_asegurado.prop("readonly", true);
+
+            $apellido_asegurado.css("background-color", "grey");
+            $apellido_asegurado.css("color", "#C0C0C0");
+            $apellido_asegurado.prop("readonly", true);
+
+            $rut_asegurado.css("background-color", "grey");
+            $rut_asegurado.css("color", "#C0C0C0");
+            $rut_asegurado.prop("readonly", true);
+
+            $dv_asegurado.css("background-color", "grey");
+            $dv_asegurado.css("color", "#C0C0C0");
+            $dv_asegurado.prop("readonly", true);
+        }
+
+        $('.beneficiario').change(function () {
+            if ($('.beneficiario').is(":checked"))
+            {
+                //var bla = $('.email_comprador').val();
+                $email_asegurado.css("background-color", "grey");
+                $email_asegurado.css("color", "#C0C0C0");
+                $email_asegurado.prop("readonly", true);
+                $email_asegurado.val( $('.email_comprador').val() );
+
+
+                $nombre_asegurado.css("background-color", "grey");
+                $nombre_asegurado.css("color", "#C0C0C0");
+                $nombre_asegurado.prop("readonly", true);
+                $nombre_asegurado.val(  $('.nombre_comprador').val() );
+
+                $apellido_asegurado.css("background-color", "grey");
+                $apellido_asegurado.css("color", "#C0C0C0");
+                $apellido_asegurado.prop("readonly", true);
+                $apellido_asegurado.val(  $('.apellido_comprador').val() );
+
+                $rut_asegurado.css("background-color", "grey");
+                $rut_asegurado.css("color", "#C0C0C0");
+                $rut_asegurado.prop("readonly", true);
+                $rut_asegurado.val(   $('.rut_comprador').val() );
+
+                $dv_asegurado.css("background-color", "grey");
+                $dv_asegurado.css("color", "#C0C0C0");
+                $dv_asegurado.prop("readonly", true);
+                $dv_asegurado.val(   $('.digito_verifiador_comprador').val() );
+
+            }
+            else
+            {
+                $nombre_asegurado.css("background-color", "#b2c1d3");
+                $nombre_asegurado.css("color", "#005469");
+                $nombre_asegurado.prop("readonly", false);
+                $nombre_asegurado.val(  '');
+
+                $apellido_asegurado.css("background-color", "#b2c1d3");
+                $apellido_asegurado.css("color", "#005469");
+                $apellido_asegurado.prop("readonly", false);
+                $apellido_asegurado.val(   $('').val() );
+
+                $rut_asegurado.css("background-color", "#b2c1d3");
+                $rut_asegurado.css("color", "#005469");
+                $rut_asegurado.prop("readonly", false);
+                $rut_asegurado.val(  '' );
+
+                $dv_asegurado.css("background-color", "#b2c1d3");
+                $dv_asegurado.css("color", "#005469");
+                $dv_asegurado.prop("readonly", false);
+                $dv_asegurado.val(  '' );
+
+                $email_asegurado.css("background-color", "#b2c1d3");
+                $email_asegurado.css("color", "#005469");
+                $email_asegurado.prop("readonly", false);
+                $email_asegurado.val(  '' );
+
+
+            }
+        });
+
+
+        $(".nombre_comprador").keyup(function(){
+            if ($('.beneficiario').is(":checked"))
+            {
+                $nombre_asegurado.val( this.value );
+                // $email_asegurado.css("background-color", "grey");
+
+            }
+        });
+
+        $(".apellido_comprador").keyup(function(){
+            if ($('.beneficiario').is(":checked"))
+            {
+                $apellido_asegurado.val( this.value );
+                // $email_asegurado.css("background-color", "grey");
+
+            }
+        });
+
+        $(".rut_comprador").keyup(function(){
+            if ($('.beneficiario').is(":checked"))
+            {
+                $rut_asegurado.val( this.value );
+                // $email_asegurado.css("background-color", "grey");
+
+            }
+
+            var $validador1= this.value;
+            var $largo1= $validador1.length;
+            //alert( $largo1);
+            for(i=0; i<$largo1; i++)
+            {
+                //alert($validador1.charAt(i));
+            }
+            //alert( this.value.length);
+
+
+        });
+
+        $(".digito_verifiador_comprador").keyup(function(){
+            if ($('.beneficiario').is(":checked"))
+            {
+                $dv_asegurado.val( this.value );
+                // $email_asegurado.css("background-color", "grey");
+
+            }
+
+        });
+
+
+        $(".rut_comprador").click(function(){
+            if ($('.beneficiario').is(":checked"))
+            {
+                $rut_asegurado.val( this.value );
+                // $email_asegurado.css("background-color", "grey");
+
+            }
+        });
+
+
+        $(".digito_verifiador_comprador").click(function(){
+            if ($('.beneficiario').is(":checked"))
+            {
+                $dv_asegurado.val( this.value );
+                // $email_asegurado.css("background-color", "grey");
+
+            }
+        });
+
+
+        $(".email_comprador").keyup(function(){
+            if ($('.beneficiario').is(":checked"))
+            {
+                $email_asegurado.val( this.value );
+               // $email_asegurado.css("background-color", "grey");
+
+            }
+        });
+
+
+
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;

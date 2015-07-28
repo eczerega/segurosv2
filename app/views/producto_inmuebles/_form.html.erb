@@ -1,29 +1,364 @@
 
+
+
+
+
+
+
+
+
+
+<script>
+
+    $(document).ready(function(){
+        // alert('asasd');
+        var $nombre_asegurado = $("#nombre_asegurado");
+        var $apellido_asegurado = $("#apellido_asegurado");
+        var $rut_asegurado = $("#rut_asegurado");
+        var $dv_asegurado = $("#digito_verificador_asegurado");
+        var $email_asegurado = $("#email_asegurado");
+        var $numero_asegurado = $("#numero_asegurado");
+
+        var $nombre_comprador = $("#nombre_comprador");
+        var $apellido_comprador = $("#apellido_comprador");
+        var $rut_comprador = $("#rut_comprador");
+        var $dv_comprador = $("#digito_verificador_comprador");
+        var $email_comprador = $("#email_comprador");
+        var $numero_comprador = $("#numero_comprador");
+
+
+        var $enviar = $("#enviar");
+        var $validador_rut_comprador=false;
+        var $validador_rut_asegurado=false;
+        Testear_condiciones();
+
+        if ($('#beneficiario').is(":checked"))
+        {
+            Testear_condiciones();
+            $email_asegurado.css("background-color", "grey");
+            $email_asegurado.css("color", "#C0C0C0");
+            $email_asegurado.prop("readonly", true);
+
+            $nombre_asegurado.css("background-color", "grey");
+            $nombre_asegurado.css("color", "#C0C0C0");
+            $nombre_asegurado.prop("readonly", true);
+
+            $apellido_asegurado.css("background-color", "grey");
+            $apellido_asegurado.css("color", "#C0C0C0");
+            $apellido_asegurado.prop("readonly", true);
+
+            $rut_asegurado.css("background-color", "grey");
+            $rut_asegurado.css("color", "#C0C0C0");
+            $rut_asegurado.prop("readonly", true);
+
+            $dv_asegurado.css("background-color", "grey");
+            $dv_asegurado.css("color", "#C0C0C0");
+            $dv_asegurado.prop("readonly", true);
+
+            $numero_asegurado.css("background-color", "grey");
+            $numero_asegurado.css("color", "#C0C0C0");
+            $numero_asegurado.prop("readonly", true);
+            Testear_condiciones();
+        }
+        else
+        {
+            Testear_condiciones();
+        }
+
+        $('#beneficiario').change(function () {
+            Testear_condiciones();
+            if ($('#beneficiario').is(":checked"))
+            {
+                //var bla = $('.email_comprador').val();
+                $email_asegurado.css("background-color", "grey");
+                $email_asegurado.css("color", "#C0C0C0");
+                $email_asegurado.prop("readonly", true);
+                $email_asegurado.val( $('#email_comprador').val() );
+
+
+                $nombre_asegurado.css("background-color", "grey");
+                $nombre_asegurado.css("color", "#C0C0C0");
+                $nombre_asegurado.prop("readonly", true);
+                $nombre_asegurado.val(  $('#nombre_comprador').val() );
+
+                $apellido_asegurado.css("background-color", "grey");
+                $apellido_asegurado.css("color", "#C0C0C0");
+                $apellido_asegurado.prop("readonly", true);
+                $apellido_asegurado.val(  $('#apellido_comprador').val() );
+
+                $rut_asegurado.css("background-color", "grey");
+                $rut_asegurado.css("color", "#C0C0C0");
+                $rut_asegurado.prop("readonly", true);
+                $rut_asegurado.val(   $('#rut_comprador').val() );
+
+                $dv_asegurado.css("background-color", "grey");
+                $dv_asegurado.css("color", "#C0C0C0");
+                $dv_asegurado.prop("readonly", true);
+                $dv_asegurado.val(   $('#digito_verificador_comprador').val() );
+
+                $numero_asegurado.css("background-color", "grey");
+                $numero_asegurado.css("color", "#C0C0C0");
+                $numero_asegurado.prop("readonly", true);
+                $numero_asegurado.val(   $('#numero_comprador').val() );
+                Testear_condiciones();
+
+            }
+            else
+            {
+                $nombre_asegurado.css("background-color", "");
+                $nombre_asegurado.css("color", "");
+                $nombre_asegurado.prop("readonly", false);
+                $nombre_asegurado.val(  '');
+
+                $apellido_asegurado.css("background-color", "");
+                $apellido_asegurado.css("color", "");
+                $apellido_asegurado.prop("readonly", false);
+                $apellido_asegurado.val(   $('').val() );
+
+                $rut_asegurado.css("background-color", "");
+                $rut_asegurado.css("color", "");
+                $rut_asegurado.prop("readonly", false);
+                $rut_asegurado.val(  '' );
+
+                $dv_asegurado.css("background-color", "");
+                $dv_asegurado.css("color", "");
+                $dv_asegurado.prop("readonly", false);
+                $dv_asegurado.val(  '' );
+
+                $email_asegurado.css("background-color", "");
+                $email_asegurado.css("color", "");
+                $email_asegurado.prop("readonly", false);
+                $email_asegurado.val(  '' );
+
+                $numero_asegurado.css("background-color", "");
+                $numero_asegurado.css("color", "");
+                $numero_asegurado.prop("readonly", false);
+                $numero_asegurado.val(  '' );
+                Testear_condiciones();
+
+
+            }
+        });
+
+
+        $("#nombre_comprador").keyup(function(){
+            Testear_condiciones();
+            if ($('#beneficiario').is(":checked"))
+            {
+                $nombre_asegurado.val( this.value );
+                // $email_asegurado.css("background-color", "grey");
+                Testear_condiciones();
+
+            }
+            else
+            {
+                Testear_condiciones();
+            }
+        });
+
+        $("#apellido_comprador").keyup(function(){
+            Testear_condiciones();
+            if ($('#beneficiario').is(":checked"))
+            {
+                $apellido_asegurado.val( this.value );
+                // $email_asegurado.css("background-color", "grey");
+                Testear_condiciones();
+
+            }
+            else
+            {
+                Testear_condiciones();
+            }
+        });
+
+        $("#rut_comprador").keyup(function(){
+            Testear_condiciones();
+            if ($('#beneficiario').is(":checked"))
+            {
+                $rut_asegurado.val( this.value );
+                // $email_asegurado.css("background-color", "grey");
+                Testear_condiciones();
+
+            }
+
+            var $validador1= this.value;
+            var $largo1= $validador1.length;
+            //alert( $largo1);
+            for(i=0; i<$largo1; i++)
+            {
+                //alert($validador1.charAt(i));
+            }
+            //alert( this.value.length);
+
+
+        });
+
+        $("#digito_verificador_comprador").keyup(function(){
+            Testear_condiciones();
+            if ($('#beneficiario').is(":checked"))
+            {
+                $dv_asegurado.val( this.value );
+                // $email_asegurado.css("background-color", "grey");
+                Testear_condiciones();
+
+            }
+            else
+            {
+                Testear_condiciones();
+            }
+
+        });
+
+
+        $("#rut_comprador").click(function(){
+            Testear_condiciones();
+            if ($('#beneficiario').is(":checked"))
+            {
+                $rut_asegurado.val( this.value );
+                // $email_asegurado.css("background-color", "grey");
+                Testear_condiciones();
+
+            }
+            else
+            {
+                Testear_condiciones();
+            }
+        });
+
+
+        $("#digito_verificador_comprador").click(function(){
+            Testear_condiciones();
+            if ($('#beneficiario').is(":checked"))
+            {
+                $dv_asegurado.val( this.value );
+
+                // $email_asegurado.css("background-color", "grey");
+                Testear_condiciones();
+
+            }
+            else
+            {
+                Testear_condiciones();
+            }
+        });
+
+
+        $("#email_comprador").keyup(function(){
+            Testear_condiciones();
+            if ($('#beneficiario').is(":checked"))
+            {
+                $email_asegurado.val( this.value );
+                // $email_asegurado.css("background-color", "grey");
+                Testear_condiciones();
+
+            }
+            else
+            {
+                Testear_condiciones();
+            }
+        });
+
+        $("#numero_comprador").keyup(function(){
+            Testear_condiciones();
+            if ($('#beneficiario').is(":checked"))
+            {
+                $numero_asegurado.val( this.value );
+                // $email_asegurado.css("background-color", "grey");
+                Testear_condiciones();
+            }
+            else
+            {
+                Testear_condiciones();
+            }
+        });
+
+        $("#nombre_asegurado").keyup(function(){
+            Testear_condiciones();
+        });
+        $("#apellido_asegurado").keyup(function(){
+            Testear_condiciones();
+        });
+        $("#rut_asegurado").keyup(function(){
+            Testear_condiciones();
+        });
+        $("#digito_verificador_asegurado").keyup(function(){
+            Testear_condiciones();
+        });
+        $("#email_asegurado").keyup(function(){
+            Testear_condiciones();
+        });
+        $("#numero_asegurado").keyup(function(){
+            Testear_condiciones();
+        });
+
+
+        function Testear_condiciones() {
+
+            if($nombre_asegurado.val().toString()==""
+                    || $apellido_asegurado.val().toString()==""
+                    || $rut_asegurado.val().toString()==""
+                    || $dv_asegurado.val().toString()==""
+                    || $email_asegurado.val().toString()==""
+                    || $numero_asegurado.val().toString()==""
+                    ||$nombre_comprador.val().toString()==""
+                    || $apellido_comprador.val().toString()==""
+                    || $rut_comprador.val().toString()==""
+                    || $dv_comprador.val().toString()==""
+                    || $email_comprador.val().toString()==""
+                    || $numero_comprador.val().toString()==""
+            )
+            {
+                //$enviar.click(false);
+                $enviar.css("background-color", "grey");
+                document.getElementById("enviar").style.cursor = "default";
+                document.getElementById("enviar").disabled = true;
+
+            }
+            else
+            {
+
+                $enviar.css("background-color", "");
+                document.getElementById("enviar").style.cursor = "pointer";
+                //$enviar.click(true);
+                document.getElementById("enviar").disabled = false;
+            }
+
+
+        }
+
+
+    });
+
+</script>
+
+
+
+
+
 <div class="container" style="width:  100%">
   <h2>Vender un producto inmueble.</h2>
   <p>Ingrese los datos necesarios para efectuar la venta .</p>
 
 
 
-
-
   <%= form_for(@producto_inmueble) do |f| %>
-  <% if @producto_inmueble.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@producto_inmueble.errors.count, "error") %> prohibited this producto_inmueble from being saved:</h2>
+      <% if @producto_inmueble.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@producto_persona.errors.count, "error") %> prohibited this producto_persona from being saved:</h2>
 
-      <ul>
-      <% @producto_inmueble.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+            <ul>
+              <% @producto_persona.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
 
 
       <div class="row">
         <div class="col-sm-4">
-        <h3>Datos seguro</h3>
+
+          <h3>Datos productos</h3>
           <div class="field">
             <%= f.label :producto %><br>
             <%= f.text_field :producto , :class => "form-control" %>
@@ -62,63 +397,71 @@
           <h3>Datos comprador</h3>
           <div class="field">
             <%= f.label :nombre_comprador %><br>
-            <%= f.text_field :nombre_comprador , :class => "form-control" %>
+            <%= f.text_field :nombre_comprador , :id => "nombre_comprador", :class => "form-control" %>
           </div>
           <div class="field">
             <%= f.label :apellido_comprador %><br>
-            <%= f.text_field :apellido_comprador , :class => "form-control" %>
+            <%= f.text_field :apellido_comprador , :id => "apellido_comprador", :class => "form-control" %>
           </div>
           <div class="field">
             <%= f.label :rut_comprador %><br>
-            <%= f.text_field :rut_comprador , :class => "form-control" %>
+            <%= f.text_field :rut_comprador, :id => "rut_comprador" , :class => "form-control" %>
           </div>
           <div class="field">
             <%= f.label :digito_verificador_comprador %><br>
-            <%= f.text_field :digito_verificador_comprador , :class => "form-control" %>
+            <%= f.number_field :digito_verificador_comprador, :id => "digito_verificador_comprador" , :class => "form-control" %>
           </div>
           <div class="field">
             <%= f.label :email_comprador %><br>
-            <%= f.text_field :email_comprador , :class => "form-control" %>
+            <%= f.text_field :email_comprador , :id => "email_comprador", :class => "form-control" %>
           </div>
           <div class="field">
             <%= f.label :numero_comprador %><br>
-            <%= f.text_field :numero_comprador , :class => "form-control" %>
+            <%= f.text_field :numero_comprador , :id => "numero_comprador", :class => "form-control" %>
           </div>
+          El comprador es el asegurado: <input type="checkbox" id="beneficiario">
         </div>
         <div class="col-sm-4">
           <h3>Datos asegurado</h3>
 
-
           <div class="field">
             <%= f.label :nombre_asegurado %><br>
-            <%= f.text_field :nombre_asegurado , :class => "form-control" %>
+            <%= f.text_field :nombre_asegurado, :id => "nombre_asegurado" , :class => "form-control" %>
           </div>
           <div class="field">
             <%= f.label :apellido_asegurado %><br>
-            <%= f.text_field :apellido_asegurado , :class => "form-control" %>
+            <%= f.text_field :apellido_asegurado, :id => "apellido_asegurado"  , :class => "form-control" %>
           </div>
           <div class="field">
             <%= f.label :rut_asegurado %><br>
-            <%= f.text_field :rut_asegurado , :class => "form-control" %>
+            <%= f.text_field :rut_asegurado , :id => "rut_asegurado" , :class => "form-control" %>
           </div>
           <div class="field">
             <%= f.label :digito_verificador_asegurado %><br>
-            <%= f.number_field :digito_verificador_asegurado , :class => "form-control" %>
+            <%= f.number_field :digito_verificador_asegurado , :id => "digito_verificador_asegurado" , :class => "form-control" %>
           </div>
           <div class="field">
             <%= f.label :email_asegurado %><br>
-            <%= f.text_field :email_asegurado , :class => "form-control" %>
+            <%= f.text_field :email_asegurado , :id => "email_asegurado" , :class => "form-control" %>
           </div>
           <div class="field">
             <%= f.label :numero_asegurado %><br>
-            <%= f.text_field :numero_asegurado , :class => "form-control" %>
-          </div><br>
+            <%= f.text_field :numero_asegurado , :id => "numero_asegurado" , :class => "form-control" %>
+          </div>
           <div class="actions">
-            <%= f.submit 'Vender!', :class => 'btn btn-primary' %>
+            <%= f.submit 'Vender!', :class => 'btn btn-primary', :id => "enviar" %>
           </div>
         </div>
       </div>
 
-<% end %>
 
-    </div>
+
+  <% end %>
+</div>
+
+
+
+
+
+
+
