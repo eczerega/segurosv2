@@ -2,7 +2,7 @@
 
 <h1>Listing Usuarios</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Nombre</th>
@@ -12,7 +12,7 @@
       <th>Email</th>
       <th>Telefono fijo</th>
       <th>Telefono celular</th>
-      <th>Password digest</th>
+
       <th>Image</th>
       <th>Tipo</th>
       <th>Estado</th>
@@ -31,7 +31,6 @@
         <td><%= usuario.email %></td>
         <td><%= usuario.telefono_fijo %></td>
         <td><%= usuario.telefono_celular %></td>
-        <td><%= usuario.password_digest %></td>
         <td><%= usuario.image %></td>
         <td><%= usuario.tipo %></td>
         <td><%= usuario.estado %></td>

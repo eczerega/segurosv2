@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="jumbotron">
+
+
+    <% if @validador==1 %>
+        <h1>Seguro activado</h1>
+        <p>Se ha enviado al mail  del asegurado la póliza de su seguro. Además se envió a su teléfono celular el códido con el cual puede hacer efectivo el seguro desde ese dispositivo.</p>
+
+    <% elsif @validador==2 %>
+        <h1>Seguro ya estaba activado</h1>
+        <p>Su seguro ya estaba actiado, sin embargo, se ha reenviado al mail del asegurado la póliza.</p>
+    <% else %>
+        <h1>Hay un error de información. Esta actividad será informada a la  administración.
+        <br>
+        </h1>
+
+    <% end %>
+
+
+  </div>
+ </div>

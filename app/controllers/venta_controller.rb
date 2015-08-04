@@ -1,6 +1,7 @@
 class VentaController < ApplicationController
   before_action :set_ventum, only: [:show, :edit, :update, :destroy]
 
+
   # GET /venta
   # GET /venta.json
   def index
@@ -36,6 +37,36 @@ class VentaController < ApplicationController
       end
     end
   end
+
+  def activador
+    @token = params[:token]
+    @id2 = params[:id2]
+    @venta = Ventum.find(@id2.to_i)
+    @validador = 'nada'
+    if !@venta.nil? && @venta.aux1 == '0'
+      @venta.aux1 = '1'
+      @venta.save
+      @validador= 1
+      @pdf=WickedPdf.new.pdf_from_string('test')
+      save_path = Rails.root.join('pdfs','poliza'+@venta.id.to_s+'.pdf')
+      File.open(save_path, 'wb') do |file|
+        file << @pdf
+      end
+      ActionMail.enviar_poliza('eczec1@gmail.com', @venta.id.to_s).deliver
+      render :layout => false
+    elsif !@venta.nil? && @venta.aux1 == '1'
+      @validador = 2
+      ActionMail.enviar_poliza('eczec1@gmail.com',@venta.id.to_s).deliver
+      render :layout => false
+    else
+      @validador = 3
+      render :layout => false
+    end
+
+
+  end
+
+
 
   # PATCH/PUT /venta/1
   # PATCH/PUT /venta/1.json

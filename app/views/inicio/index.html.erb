@@ -38,7 +38,12 @@
 <!-- 55px 0px 25px 200px; -->
 <% if current_user.tipo ==1 %>
     <div class="container-fluid">
+      <div class="jumbotron">
+        <h1>Ingresar datos al sistema</h1>
+        <p>Seleccione el ícono del elemento que desee ingresar a seguro fácil.</p>
+      </div>
       <div class="row"  style="padding-left: 15%">
+
 
 
         <%= link_to(new_compania_seguro_path) do %>
@@ -223,6 +228,7 @@
     <% end %>
 <% else current_user.tipo ==3 %>
     <div class="container-fluid">
+
       <h1>Vender un producto</h1>
       <p>Selecciona el tipo de producto que quieres vender.</p>
 

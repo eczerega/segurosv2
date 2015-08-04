@@ -2,7 +2,7 @@
 
 <h1>Listing Informacion Productos</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Nombre</th>
@@ -11,10 +11,6 @@
       <th>Valor asegurado</th>
       <th>Duracion meses</th>
       <th>Aseguradora responsable</th>
-      <th>Aux1</th>
-      <th>Aux2</th>
-      <th>Aux3</th>
-      <th>Image</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -28,10 +24,6 @@
         <td><%= informacion_producto.valor_asegurado %></td>
         <td><%= informacion_producto.duracion_meses %></td>
         <td><%= informacion_producto.aseguradora_responsable_id %></td>
-        <td><%= informacion_producto.aux1 %></td>
-        <td><%= informacion_producto.aux2 %></td>
-        <td><%= informacion_producto.aux3 %></td>
-        <td><%= informacion_producto.image %></td>
         <td><%= link_to 'Show', informacion_producto %></td>
         <td><%= link_to 'Edit', edit_informacion_producto_path(informacion_producto) %></td>
         <td><%= link_to 'Destroy', informacion_producto, method: :delete, data: { confirm: 'Are you sure?' } %></td>

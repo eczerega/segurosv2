@@ -57,6 +57,13 @@ gem 'carrierwave'
 gem 'bcrypt', '~> 3.1.7'
 ###
 
+#Gema para activar por mail
+gem 'devise'
+##
+
+#Gema para recibir mails
+gem 'mailcatcher'
+###
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

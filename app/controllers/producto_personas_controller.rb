@@ -1,4 +1,7 @@
+
+
 class ProductoPersonasController < ApplicationController
+
   before_action :set_producto_persona, only: [:show, :edit, :update, :destroy]
 
   # GET /producto_personas
@@ -26,8 +29,14 @@ class ProductoPersonasController < ApplicationController
   def create
     @producto_persona = ProductoPersona.new(producto_persona_params)
 
+
     respond_to do |format|
+
       if @producto_persona.save
+
+        @ventum = Ventum.create(:tipo_producto => '1', :monto => 200, :vendedor_id => current_user.id, :punto_de_venta_id =>current_user.punto_venta, :token => SecureRandom.base64.to_s.gsub("?", "a").gsub("=", "b").gsub("/", "c").gsub(":", "d"), :aux1 => '0', :aux2 => @producto_persona.id.to_s)
+        #ActionMail.wea()
+        ActionMail.confirmar_compra(@producto_persona.email_comprador,@producto_persona.nombre_comprador, @ventum.token, @ventum.id).deliver
         format.html { redirect_to @producto_persona, notice: 'Producto persona was successfully created.' }
         format.json { render :show, status: :created, location: @producto_persona }
       else

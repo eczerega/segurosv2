@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   resources :venta
+  #Ruta para validar ventas
+  resources :venta do
+    member do
+      get :activador
+    end
+  end
 
   resources :producto_inmuebles
 
@@ -18,7 +24,6 @@ Rails.application.routes.draw do
   resources :empresas_grandes
 
   resources :usuarios
-
   #Ruta para descargar pdfs
   resources :usuarios do
     member do
