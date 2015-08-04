@@ -9,6 +9,10 @@
     <% elsif @validador==2 %>
         <h1>Seguro ya estaba activado</h1>
         <p>Su seguro ya estaba actiado, sin embargo, se ha reenviado al mail del asegurado la póliza.</p>
+    <% elsif @validador==0 %>
+        <h1>Hay un error de información. Esta actividad será informada a la  administración.
+          <br>
+        </h1>
     <% else %>
         <h1>Hay un error de información. Esta actividad será informada a la  administración.
         <br>

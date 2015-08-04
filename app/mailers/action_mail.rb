@@ -14,8 +14,6 @@ class ActionMail < ActionMailer::Base
 
   def enviar_poliza(mail, id)
 
-
-
     @mail= mail
     @id= id
     attachments['Poliza.pdf'] = File.read('pdfs/'+'poliza'+@id.to_s+'.pdf')
