@@ -15,6 +15,7 @@ class ProductoInmueblesController < ApplicationController
   # GET /producto_inmuebles/new
   def new
     @producto_inmueble = ProductoInmueble.new
+    @productos = InformacionProducto.where(tipo: 2)
   end
 
   # GET /producto_inmuebles/1/edit

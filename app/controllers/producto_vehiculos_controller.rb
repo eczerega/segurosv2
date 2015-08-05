@@ -15,6 +15,7 @@ class ProductoVehiculosController < ApplicationController
   # GET /producto_vehiculos/new
   def new
     @producto_vehiculo = ProductoVehiculo.new
+    @productos = InformacionProducto.where(tipo: 4)
   end
 
   # GET /producto_vehiculos/1/edit

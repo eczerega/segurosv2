@@ -15,6 +15,7 @@ class InformacionProductosController < ApplicationController
   # GET /informacion_productos/new
   def new
     @informacion_producto = InformacionProducto.new
+    @compania_seguros = CompaniaSeguro.all
   end
 
   # GET /informacion_productos/1/edit

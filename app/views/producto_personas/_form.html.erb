@@ -350,10 +350,10 @@
         <div class="col-sm-4">
 
           <h3>Datos productos</h3>
-          <div class="field">
+         <div class="field">
             <%= f.label :producto %><br>
-            <%= f.text_field :producto , :class => "form-control" %>
-          </div>
+           <%= f.select(:producto, options_for_select(@productos.collect{ |u| [u.nombre] }), :class => "form-control") %>
+         </div>
         </div>
         <div class="col-sm-4">
           <h3>Datos comprador</h3>

@@ -26,7 +26,7 @@
   </div>
   <div class="field">
     <%= f.label :tipo %><br>
-    <%= f.text_field :tipo , :class => "form-control" %>
+    <%= f.select(:tipo, options_for_select(1..4), :class => "form-control") %>
   </div>
   <div class="field">
     <%= f.label :prima %><br>
@@ -42,7 +42,8 @@
   </div>
   <div class="field">
     <%= f.label :aseguradora_responsable_id %><br>
-    <%= f.number_field :aseguradora_responsable_id , :class => "form-control" %>
+    <%= f.select(:aseguradora_responsable_id, options_for_select(@compania_seguros.collect{ |u| [u.id] }), :class => "form-control") %>
+
   </div>
 
   <div class="field">

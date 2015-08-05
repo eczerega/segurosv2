@@ -47,21 +47,33 @@ class VentaController < ApplicationController
       render :layout => false
     else
       @venta = Ventum.find(@id2.to_i)
+      @producto = nil
+      if @venta.tipo_producto == '1'
+        @producto = ProductoPersona.find(@venta.pid)
+      elsif @venta.tipo_producto == '2'
+        @producto = ProductoInmueble.find(@venta.pid)
+      elsif @venta.tipo_producto == '3'
+        @producto = ProductoTecnologium.find(@venta.pid)
+      elsif @venta.tipo_producto == '4'
+        @producto = ProductoVehiculo.find(@venta.pid)
+      end
+      @mailasegurado = @producto.email_asegurado.to_s
 
       if !@venta.nil? && @venta.aux1 == '0'
         @venta.aux1 = '1'
         @venta.save
         @validador= 1
+
         @pdf=WickedPdf.new.pdf_from_string('test')
         save_path = Rails.root.join('pdfs','poliza'+@venta.id.to_s+'.pdf')
         File.open(save_path, 'wb') do |file|
           file << @pdf
         end
-        ActionMail.enviar_poliza('eczec1@gmail.com', @venta.id.to_s).deliver
+        ActionMail.enviar_poliza(@mailasegurado, @venta.id.to_s).deliver
         render :layout => false
       elsif !@venta.nil? && @venta.aux1 == '1'
         @validador = 2
-        ActionMail.enviar_poliza('eczec1@gmail.com', @venta.id.to_s).deliver
+        ActionMail.enviar_poliza(@mailasegurado, @venta.id.to_s).deliver
         render :layout => false
       else
         @validador = 3

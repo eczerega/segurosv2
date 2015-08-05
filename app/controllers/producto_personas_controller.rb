@@ -18,6 +18,7 @@ class ProductoPersonasController < ApplicationController
   # GET /producto_personas/new
   def new
     @producto_persona = ProductoPersona.new
+    @productos = InformacionProducto.where(tipo: 1)
   end
 
   # GET /producto_personas/1/edit
@@ -33,8 +34,7 @@ class ProductoPersonasController < ApplicationController
     respond_to do |format|
 
       if @producto_persona.save
-
-        @ventum = Ventum.create(:tipo_producto => '1', :monto => 200, :vendedor_id => current_user.id, :punto_de_venta_id =>current_user.punto_venta, :token => SecureRandom.base64.to_s.gsub("?", "a").gsub("=", "b").gsub("/", "c").gsub(":", "d"), :aux1 => '0', :aux2 => @producto_persona.id.to_s)
+        @ventum = Ventum.create(:tipo_producto => '1', :monto => 200, :vendedor_id => current_user.id, :punto_de_venta_id =>current_user.punto_venta, :token => SecureRandom.base64.to_s.gsub("?", "a").gsub("=", "b").gsub("/", "c").gsub(":", "d"), :pid => @producto_persona.id, :aux1 => '0')
         #ActionMail.wea()
         ActionMail.confirmar_compra(@producto_persona.email_comprador,@producto_persona.nombre_comprador, @ventum.token, @ventum.id).deliver
         format.html { redirect_to @producto_persona, notice: 'Producto persona was successfully created.' }

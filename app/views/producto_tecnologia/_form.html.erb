@@ -349,7 +349,7 @@
 
           <div class="field">
             <%= f.label :producto %><br>
-            <%= f.text_field :producto , :class => "form-control" %>
+            <%= f.select(:producto, options_for_select(@productos.collect{ |u| [u.nombre] }), :class => "form-control") %>
           </div>
           <div class="field">
             <%= f.label :tipo_producto %><br>
